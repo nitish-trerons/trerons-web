@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, Users, Heart, Zap, Target, Briefcase, MapPin, Clock, DollarSign, GraduationCap, Send } from 'lucide-react';
@@ -287,7 +287,7 @@ const Careers = () => {
                                 { step: "01", title: "Submit Application", description: "Send your resume and cover letter through our online portal or email" },
                                 { step: "02", title: "Initial Review", description: "Our HR team reviews your application and qualifications" },
                                 { step: "03", title: "Interview Process", description: "Multiple rounds of interviews with team members and leadership" }
-                            ].map((step, index) => (
+                            ].map((step) => (
                                 <div key={step.step} className="text-center group">
                                     <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
                                         <span className="text-2xl font-bold text-white">{step.step}</span>

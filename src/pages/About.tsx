@@ -1,7 +1,7 @@
-import React from 'react';
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, Users, Award, Target, Heart, Zap, CheckCircle, MapPin, Phone, Mail, Globe } from 'lucide-react';
+import { ArrowRight, Users, Award, Target, Heart, Zap, MapPin, Phone, Mail, Globe } from 'lucide-react';
 
 const About = () => {
     const values = [

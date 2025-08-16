@@ -1,6 +1,6 @@
-import React from 'react';
-import { Button } from '@/components/ui/button';
-import { Scale, Shield, Users, Globe, AlertTriangle } from 'lucide-react';
+
+
+import { Scale, Users, AlertTriangle } from 'lucide-react';
 
 const TermsOfService = () => {
     return (

@@ -118,11 +118,11 @@ export const useGSAP = () => {
     };
 
     // Floating animation
-    const floatingAnimation = (y = 20, duration = 2) => {
+    const floatingAnimation = (y = 20) => {
         if (elementRef.current) {
             gsap.to(elementRef.current, {
                 y: `-=${y}`,
-                duration,
+                duration: 2,
                 ease: "power1.inOut",
                 yoyo: true,
                 repeat: -1
@@ -131,7 +131,7 @@ export const useGSAP = () => {
     };
 
     // Parallax effect
-    const parallaxEffect = (speed = 0.5) => {
+    const parallaxEffect = () => {
         if (elementRef.current) {
             gsap.to(elementRef.current, {
                 yPercent: -50,
@@ -147,7 +147,7 @@ export const useGSAP = () => {
     };
 
     // Text reveal animation
-    const textReveal = (duration = 1, delay = 0) => {
+    const textReveal = (delay = 0) => {
         if (elementRef.current) {
             const text = elementRef.current.textContent || "";
             elementRef.current.innerHTML = "";
@@ -156,7 +156,7 @@ export const useGSAP = () => {
                 char === " " ? "&nbsp;" : char
             );
 
-            chars.forEach((char, index) => {
+            chars.forEach((char, idx) => {
                 const span = document.createElement("span");
                 span.innerHTML = char;
                 span.style.opacity = "0";
@@ -166,7 +166,7 @@ export const useGSAP = () => {
                 gsap.to(span, {
                     opacity: 1,
                     duration: 0.05,
-                    delay: delay + index * 0.03,
+                    delay: delay + idx * 0.03,
                     ease: "power2.out"
                 });
             });
@@ -178,7 +178,7 @@ export const useGSAP = () => {
         if (elementRef.current) {
             const tl = gsap.timeline({ repeat: -1 });
 
-            colors.forEach((color, index) => {
+            colors.forEach((color) => {
                 tl.to(elementRef.current, {
                     backgroundColor: color,
                     duration: duration / colors.length,
