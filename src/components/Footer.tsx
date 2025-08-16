@@ -27,8 +27,15 @@ const Footer = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {/* Company Info */}
                         <div className="lg:col-span-1">
-                            <Link to="/">
-                                <h3 className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent mb-4">
+                            <Link to="/" className="flex items-center space-x-3 mb-4">
+                                <div className="w-8 h-8">
+                                    <img
+                                        src="/TreronsLogo.svg"
+                                        alt="Trerons Logo"
+                                        className="w-full h-full"
+                                    />
+                                </div>
+                                <h3 className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
                                     Trerons
                                 </h3>
                             </Link>
