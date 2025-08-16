@@ -1,7 +1,7 @@
-import React from 'react';
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Code, Smartphone, Globe, Share2, Database, Shield, Zap, ArrowRight, CheckCircle, Monitor, Cloud } from 'lucide-react';
+import { Code, Smartphone, Globe, Share2, Database, Shield, ArrowRight, CheckCircle, Monitor } from 'lucide-react';
 
 const TechServices = () => {
     const services = [

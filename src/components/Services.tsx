@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Calendar, Video, Code, ArrowRight, Star, Users, Award } from 'lucide-react';
+import { Calendar, Video, Code, ArrowRight } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -290,7 +290,7 @@ const Services = () => {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {eventServices.map((service, index) => (
+                        {eventServices.map((service) => (
                             <Card key={service.title} className="event-card service-card group relative overflow-hidden transition-all duration-500 hover:shadow-2xl">
                                 <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
                                 <CardHeader className="relative z-10">
@@ -332,7 +332,7 @@ const Services = () => {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {filmServices.map((service, index) => (
+                        {filmServices.map((service) => (
                             <Card key={service.title} className="film-card service-card group relative overflow-hidden transition-all duration-500 hover:shadow-2xl">
                                 <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
                                 <CardHeader className="relative z-10">
@@ -374,7 +374,7 @@ const Services = () => {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {techServices.map((service, index) => (
+                        {techServices.map((service) => (
                             <Card key={service.title} className="tech-card service-card group relative overflow-hidden transition-all duration-500 hover:shadow-2xl">
                                 <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
                                 <CardHeader className="relative z-10">

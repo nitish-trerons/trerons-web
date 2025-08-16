@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Calendar, Users, Trophy, Heart, Star, ArrowRight, CheckCircle, Clock, MapPin, Phone } from 'lucide-react';
+import { Calendar, Users, Trophy, Heart, Star, ArrowRight, CheckCircle, Phone } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -305,7 +305,7 @@ const EventServices = () => {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {services.map((service, index) => (
+                        {services.map((service) => (
                             <Card key={service.title} className="service-card group relative overflow-hidden transition-all duration-500 hover:shadow-2xl">
                                 <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
                                 <CardHeader className="relative z-10">
@@ -344,7 +344,7 @@ const EventServices = () => {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {process.map((step, index) => (
+                        {process.map((step) => (
                             <div key={step.step} className="process-step text-center group">
                                 <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
                                     <span className="text-2xl font-bold text-white">{step.step}</span>

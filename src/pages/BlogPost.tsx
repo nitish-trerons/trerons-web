@@ -1,7 +1,7 @@
-import React from 'react';
+
 import { useParams, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardTitle } from '@/components/ui/card';
 import { Calendar, Clock, User, ArrowLeft, Tag, Share2 } from 'lucide-react';
 import { getPostBySlug, blogPosts } from '@/lib/blog';
 

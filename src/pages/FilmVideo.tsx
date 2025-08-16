@@ -1,7 +1,7 @@
-import React from 'react';
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Video, Film, Music, Palette, Globe, ArrowRight, CheckCircle, Camera, Edit, Play } from 'lucide-react';
+import { Video, Film, Music, Palette, Globe, ArrowRight, CheckCircle, Camera, Play } from 'lucide-react';
 
 const FilmVideo = () => {
     const services = [

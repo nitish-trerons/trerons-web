@@ -1,5 +1,5 @@
-import React from 'react';
-import { Button } from '@/components/ui/button';
+
+
 import { Eye, Lock, Database, Users, Globe } from 'lucide-react';
 
 const PrivacyPolicy = () => {
