@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Calendar, Video, Code, ArrowRight, Film, Music, Palette, Globe, Smartphone, Monitor, Share2 } from 'lucide-react';
+import { Calendar, Video, Code, ArrowRight, Film, Palette, Globe, Smartphone, Monitor, Share2 } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 

@@ -14,12 +14,19 @@ const contactSchema = yup.object({
     firstName: yup.string().required('First name is required').min(2, 'First name must be at least 2 characters'),
     lastName: yup.string().required('Last name is required').min(2, 'Last name must be at least 2 characters'),
     email: yup.string().email('Please enter a valid email').required('Email is required'),
-    phone: yup.string().optional(),
+    phone: yup.string().optional().default(''),
     serviceInterest: yup.string().required('Please select a service'),
     message: yup.string().required('Message is required').min(10, 'Message must be at least 10 characters')
 });
 
-type ContactFormData = yup.InferType<typeof contactSchema>;
+type ContactFormData = {
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone: string;
+    serviceInterest: string;
+    message: string;
+};
 
 const Contact = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
