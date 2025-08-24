@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Calendar, Video, Code, ArrowRight } from 'lucide-react';
+import { Calendar, Video, Code, ArrowRight, Film, Music, Palette, Globe, Smartphone, Monitor, Share2 } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -263,16 +263,16 @@ const Services = () => {
 
     const filmServices = [
         { title: "Advertisements", description: "High-impact commercials and promotional videos", icon: Video, color: "from-blue-500 to-cyan-500" },
-        { title: "Live Shows", description: "Professional live streaming and broadcast production", icon: Video, color: "from-indigo-500 to-purple-500" },
-        { title: "Short Films", description: "Creative storytelling with cinematic quality", icon: Video, color: "from-violet-500 to-fuchsia-500" },
-        { title: "Post-Production", description: "Advanced editing, VFX, and color grading", icon: Video, color: "from-sky-500 to-blue-500" }
+        { title: "Live Shows", description: "Professional live streaming and broadcast production", icon: Film, color: "from-indigo-500 to-purple-500" },
+        { title: "Short Films", description: "Creative storytelling with cinematic quality", icon: Globe, color: "from-violet-500 to-fuchsia-500" },
+        { title: "Post-Production", description: "Advanced editing, VFX, and color grading", icon: Palette, color: "from-sky-500 to-blue-500" }
     ];
 
     const techServices = [
-        { title: "Web Development", description: "Modern, responsive websites and web applications", icon: Code, color: "from-emerald-500 to-teal-500" },
-        { title: "Mobile Apps", description: "iOS and Android applications with native performance", icon: Code, color: "from-cyan-500 to-blue-500" },
+        { title: "Web Development", description: "Modern, responsive websites and web applications", icon: Monitor, color: "from-emerald-500 to-teal-500" },
+        { title: "Mobile Apps", description: "iOS and Android applications with native performance", icon: Smartphone, color: "from-cyan-500 to-blue-500" },
         { title: "Digital Products", description: "Innovative software solutions and digital platforms", icon: Code, color: "from-teal-500 to-green-500" },
-        { title: "Social Media", description: "Strategic social media management and content creation", icon: Code, color: "from-blue-500 to-indigo-500" }
+        { title: "Social Media", description: "Strategic social media management and content creation", icon: Share2, color: "from-blue-500 to-indigo-500" }
     ];
 
     return (

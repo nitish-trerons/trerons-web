@@ -5,14 +5,14 @@ import { Star, Quote } from 'lucide-react';
 
 const Clients = () => {
     const clientLogos = [
-        { name: 'TechCorp', logo: 'TC', industry: 'Technology' },
-        { name: 'EventPro', logo: 'EP', industry: 'Events' },
-        { name: 'MediaFlow', logo: 'MF', industry: 'Media' },
-        { name: 'InnovateLab', logo: 'IL', industry: 'Innovation' },
-        { name: 'GlobalEvents', logo: 'GE', industry: 'Events' },
-        { name: 'DigitalCraft', logo: 'DC', industry: 'Digital' },
-        { name: 'CreativeHub', logo: 'CH', industry: 'Creative' },
-        { name: 'FutureTech', logo: 'FT', industry: 'Technology' }
+        { name: 'LYFE', logo: 'https://www.lyfehotels.com/images/logo.svg', industry: 'Technology' },
+        { name: 'SOA', logo: 'https://images.squarespace-cdn.com/content/v1/57713a8e2994cae381dd86fe/1510404984171-ODP67JSA35YQTMKZ6ATF/favicon.ico?format=100w.', industry: 'Events' },
+        { name: 'IPCA', logo: 'https://ipca.com/wp-content/htmlMenu/images/logo-color.svg', industry: 'Media' },
+        { name: 'HDFC', logo: 'https://www.hdfcbank.com/static/features/%5BBBHOST%5D/theme-nb-hdfc/favicon.ico', industry: 'Innovation' },
+        { name: 'Paschima Publications', logo: 'https://stock.paschima.in/favicon.png', industry: 'Events' },
+        { name: 'YoBytech', logo: 'https://yobytech.com/assets/img/AUTOMATION.webp', industry: 'Digital' },
+        { name: 'MusicTechnica', logo: 'https://cdn-icons-png.flaticon.com/512/2991/2991110.png', industry: 'Creative' },
+        { name: 'Laptop Forum', logo: 'https://cdn-icons-png.flaticon.com/512/2991/2991110.png', industry: 'Technology' },
     ];
 
     const testimonials = [
@@ -54,14 +54,20 @@ const Clients = () => {
 
                 {/* Client Logos Grid */}
                 <div className="mb-20">
-                    <h3 className="text-2xl font-semibold text-center mb-12">Our Valued Clients</h3>
-                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8">
+                    <h3 className="text-xl sm:text-2xl font-semibold text-center mb-8 sm:mb-12">Our Valued Clients</h3>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4 sm:gap-6 lg:gap-8">
                         {clientLogos.map((client, index) => (
                             <div key={index} className="group">
-                                <div className="w-full aspect-square bg-gradient-to-br from-[hsl(var(--muted))] to-[hsl(var(--muted)/0.5)] rounded-2xl flex items-center justify-center border border-[hsl(var(--border))] hover:border-[hsl(var(--primary)/0.4)] transition-all duration-300 hover:scale-110 hover:shadow-lg">
-                                    <div className="text-center">
-                                        <div className="text-2xl font-bold text-[hsl(var(--primary))] mb-1">{client.logo}</div>
-                                        <div className="text-xs text-[hsl(var(--muted-foreground))]">{client.name}</div>
+                                <div className="w-full aspect-square bg-gradient-to-br from-[hsl(var(--muted))] to-[hsl(var(--muted)/0.5)] rounded-xl sm:rounded-2xl flex flex-col items-center justify-center border border-[hsl(var(--border))] hover:border-[hsl(var(--primary)/0.4)] transition-all duration-300 hover:scale-105 sm:hover:scale-110 hover:shadow-lg overflow-hidden">
+                                    <div className="flex flex-col items-center justify-center h-full p-2">
+                                        <div className="flex items-center justify-center mb-2 flex-1">
+                                            <img
+                                                src={client.logo}
+                                                alt={`${client.name} logo`}
+                                                className="w-12 h-12 sm:w-16 sm:h-16 object-contain group-hover:scale-110 transition-transform duration-300"
+                                            />
+                                        </div>
+                                        <div className="text-xs sm:text-sm text-[hsl(var(--muted-foreground))] font-medium leading-tight text-center">{client.name}</div>
                                     </div>
                                 </div>
                             </div>
