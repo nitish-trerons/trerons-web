@@ -361,7 +361,7 @@ const FilmVideo = () => {
                         <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
                             Our premium video production division showcasing 10+ years of creative excellence and award-winning projects
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        {/* <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                             <Button
                                 size="lg"
                                 className="text-lg px-8 py-6 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group"
@@ -379,7 +379,7 @@ const FilmVideo = () => {
                                 <Play className="mr-2 h-5 w-5" />
                                 YouTube Channel
                             </Button>
-                        </div>
+                        </div> */}
                     </div>
 
                     {/* Featured Projects Grid */}
