@@ -3,7 +3,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Video, Film, Music, Palette, Globe, ArrowRight, CheckCircle, Camera, Play, Mic, Lightbulb, Monitor, ExternalLink, Star, Eye, Calendar, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
-
 const FilmVideo = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
