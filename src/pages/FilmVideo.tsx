@@ -59,7 +59,7 @@ const FilmVideo = () => {
             title: "ACHU EBE BI TU || Lyrical Song || Soulful theme song of FIVE YEARS",
             category: "Lyrical Song",
             youtubeId: "-GPPsDpceuQ",
-            posterImage: "/src/assets/posters/TS_JIJI_POSTER.webp",
+            posterImage: "/posters/TS_JIJI_POSTER.webp",
             duration: "4:32",
             views: "7.6K",
             rating: 4.9,
@@ -70,7 +70,7 @@ const FilmVideo = () => {
             title: "ALTER | अल्टर | Short Film | Amitabh Patra",
             category: "Short Film",
             youtubeId: "IzCDH3R8Q0Q",
-            posterImage: "/src/assets/posters/POSTER_KITNE_SAAL.webp",
+            posterImage: "/posters/POSTER_KITNE_SAAL.webp",
             duration: "8:15",
             views: "1.8K",
             rating: 4.8,
@@ -81,7 +81,7 @@ const FilmVideo = () => {
             title: "MAHARAJ - Mama Kare Twerk (Official Music Video) | Hindi Rap | MKT",
             category: "Music Video",
             youtubeId: "rgMg8XL9qVw",
-            posterImage: "/src/assets/posters/MKT_Thumbnail_finall1.webp",
+            posterImage: "/posters/MKT_Thumbnail_finall1.webp",
             duration: "3:45",
             views: "8.2K",
             rating: 4.9,
@@ -92,7 +92,7 @@ const FilmVideo = () => {
             title: "Baja Mora Bhai Re || Official Video || Subham Riku || Odia Rap Song",
             category: "Music Video",
             youtubeId: "FPhNYXiSwzs",
-            posterImage: "/src/assets/posters/KIRANA_20250810164213.webp",
+            posterImage: "/posters/KIRANA_20250810164213.webp",
             duration: "6:20",
             views: "10.2K",
             rating: 4.7,
@@ -103,7 +103,7 @@ const FilmVideo = () => {
             title: "Dr Smitashree Das - My First YouTube Video | Channel Introduction",
             category: "Introduction",
             youtubeId: "GF8_Qr4KKvI",
-            posterImage: "/src/assets/posters/380514374_862344365604407_6172203292596849654_n.webp",
+            posterImage: "/posters/380514374_862344365604407_6172203292596849654_n.webp",
             duration: "2:45",
             views: "5.7K",
             rating: 4.9,
@@ -114,7 +114,7 @@ const FilmVideo = () => {
             title: "Gayatri & Vikram's Engagement Sangeet Highlights",
             category: "Wedding",
             youtubeId: "e4tFcFYZEm0",
-            posterImage: "/src/assets/posters/332496630_766824294787603_8908340302102459593_n.webp",
+            posterImage: "/posters/332496630_766824294787603_8908340302102459593_n.webp",
             duration: "4:15",
             views: "2.5K",
             rating: 4.6,
@@ -128,7 +128,7 @@ const FilmVideo = () => {
             title: "TS JIJI - Lyrical Song",
             category: "Music Video",
             youtubeId: "dQw4w9WgXcQ",
-            posterImage: "/src/assets/posters/TS_JIJI_POSTER.webp",
+            posterImage: "/posters/TS_JIJI_POSTER.webp",
             duration: "4:32",
             views: "7.6K",
             rating: 4.9,
@@ -139,7 +139,7 @@ const FilmVideo = () => {
             title: "ALTER - Alternative Music",
             category: "Music Video",
             youtubeId: "dQw4w9WgXcQ",
-            posterImage: "/src/assets/posters/ALTER_POSTER.webp",
+            posterImage: "/posters/ALTER_POSTER.webp",
             duration: "4:55",
             views: "18.7K",
             rating: 4.9,
@@ -150,7 +150,7 @@ const FilmVideo = () => {
             title: "Marketing Thumbnail Final",
             category: "Commercial",
             youtubeId: "dQw4w9WgXcQ",
-            posterImage: "/src/assets/posters/MKT_Thumbnail_finall1.webp",
+            posterImage: "/posters/MKT_Thumbnail_finall1.webp",
             duration: "2:15",
             views: "45.7K",
             rating: 4.7,
@@ -161,7 +161,7 @@ const FilmVideo = () => {
             title: "KIRANA - Brand Story",
             category: "Corporate",
             youtubeId: "dQw4w9WgXcQ",
-            posterImage: "/src/assets/posters/KIRANA_20250810164213.webp",
+            posterImage: "/posters/KIRANA_20250810164213.webp",
             duration: "3:42",
             views: "28.9K",
             rating: 4.8,
@@ -172,7 +172,7 @@ const FilmVideo = () => {
             title: "Social Media Content",
             category: "Digital Content",
             youtubeId: "dQw4w9WgXcQ",
-            posterImage: "/src/assets/posters/380514374_862344365604407_6172203292596849654_n.webp",
+            posterImage: "/posters/380514374_862344365604407_6172203292596849654_n.webp",
             duration: "1:58",
             views: "56.8K",
             rating: 4.6,
@@ -183,7 +183,7 @@ const FilmVideo = () => {
             title: "Creative Visual Story",
             category: "Short Film",
             youtubeId: "dQw4w9WgXcQ",
-            posterImage: "/src/assets/posters/332496630_766824294787603_8908340302102459593_n.webp",
+            posterImage: "/posters/332496630_766824294787603_8908340302102459593_n.webp",
             duration: "6:25",
             views: "34.2K",
             rating: 4.7,
@@ -194,7 +194,7 @@ const FilmVideo = () => {
             title: "Professional Photography",
             category: "Photography",
             youtubeId: "dQw4w9WgXcQ",
-            posterImage: "/src/assets/posters/316768516_2140921719630767_643034833981839033_n.webp",
+            posterImage: "/posters/316768516_2140921719630767_643034833981839033_n.webp",
             duration: "4:12",
             views: "67.3K",
             rating: 4.8,
@@ -205,7 +205,7 @@ const FilmVideo = () => {
             title: "Creative Design Work",
             category: "Design",
             youtubeId: "dQw4w9WgXcQ",
-            posterImage: "/src/assets/posters/029cb452-2a0c-4a46-91f9-bc9fcdcdf6d9.webp",
+            posterImage: "/posters/029cb452-2a0c-4a46-91f9-bc9fcdcdf6d9.webp",
             duration: "2:45",
             views: "23.1K",
             rating: 4.9,
@@ -216,7 +216,7 @@ const FilmVideo = () => {
             title: "Kitne Saal - Musical Journey",
             category: "Music Video",
             youtubeId: "dQw4w9WgXcQ",
-            posterImage: "/src/assets/posters/POSTER_KITNE_SAAL.webp",
+            posterImage: "/posters/POSTER_KITNE_SAAL.webp",
             duration: "5:18",
             views: "12.3K",
             rating: 4.8,
@@ -486,15 +486,15 @@ const FilmVideo = () => {
                                                     >
                                                         <div className="relative w-full aspect-[9/16] rounded-lg overflow-hidden mb-4 group-hover:scale-105 transition-all duration-300 ease-out transform-gpu">
                                                             <img
-                                                                src={project.posterImage || "/src/assets/posters/TS_JIJI_POSTER.webp"}
+                                                                src={project.posterImage || "/posters/TS_JIJI_POSTER.webp"}
                                                                 alt={project.title}
                                                                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                                                                 onError={(e) => {
                                                                     // Fallback to available poster images
                                                                     const fallbackImages = [
-                                                                        "/src/assets/posters/TS_JIJI_POSTER.webp",
-                                                                        "/src/assets/posters/POSTER_KITNE_SAAL.webp",
-                                                                        "/src/assets/posters/MKT_Thumbnail_finall1.webp"
+                                                                        "/posters/TS_JIJI_POSTER.webp",
+                                                                        "/posters/POSTER_KITNE_SAAL.webp",
+                                                                        "/posters/MKT_Thumbnail_finall1.webp"
                                                                     ];
                                                                     const randomFallback = fallbackImages[Math.floor(Math.random() * fallbackImages.length)];
                                                                     e.currentTarget.src = randomFallback;
