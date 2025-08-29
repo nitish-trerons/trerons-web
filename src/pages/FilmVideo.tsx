@@ -359,7 +359,7 @@ const FilmVideo = () => {
                             </h2>
                         </div>
                         <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
-                            Our premium video production division showcasing 10+ years of creative excellence and award-winning projects
+                            Our premium video production division showcasing 7+ years of creative excellence and award-winning projects
                         </p>
                         {/* <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                             <Button
