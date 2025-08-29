@@ -1,7 +1,7 @@
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Video, Film, Music, Palette, Globe, ArrowRight, CheckCircle, Camera, Play, Mic, Lightbulb, Monitor, ExternalLink, Star, Eye, Calendar, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Video, Film, Music, Palette, Globe, ArrowRight, CheckCircle, Camera, Play, Mic, Lightbulb, Monitor, ExternalLink, Eye, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 const FilmVideo = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -247,10 +247,7 @@ const FilmVideo = () => {
         setCurrentSlide((prev) => (prev + 1) % 3); // 3 slides
     };
 
-    const prevSlide = () => {
-        // Disable previous button to maintain left-to-right only flow
-        return;
-    };
+
 
     const goToSlide = (slideIndex: number) => {
         setCurrentSlide(slideIndex);
