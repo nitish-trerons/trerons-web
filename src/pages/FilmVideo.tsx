@@ -339,7 +339,7 @@ const FilmVideo = () => {
             </section>
 
             {/* Visualloop Section */}
-            <section className="py-20 bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-950/20 dark:to-blue-950/20">
+            <section id="visualloop" className="py-20 bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-950/20 dark:to-blue-950/20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16 animate-fade-in-up">
                         <div className="inline-flex items-center gap-3 mb-6">
@@ -383,7 +383,7 @@ const FilmVideo = () => {
                     </div>
 
                     {/* Featured Projects Grid */}
-                    <div className="mb-16">
+                    <div id="featured-projects" className="mb-16">
                         <h3 className="text-2xl font-bold text-center mb-8 animate-fade-in-up" style={{ animationDelay: '50ms' }}>Featured Projects</h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {featuredProjects.map((project, index) => (
@@ -446,7 +446,7 @@ const FilmVideo = () => {
                     </div>
 
                     {/* Movie/Video Poster Carousel */}
-                    <div className="mb-16 animate-slide-in-left" style={{ animationDelay: '200ms' }}>
+                    <div id="project-showcase" className="mb-16 animate-slide-in-left" style={{ animationDelay: '200ms' }}>
                         <h3 className="text-2xl font-bold text-center mb-8 animate-fade-in-up" style={{ animationDelay: '100ms' }}>Project Showcase</h3>
                         <div className="relative">
                             {/* Carousel Container */}
