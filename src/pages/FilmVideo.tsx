@@ -1,7 +1,7 @@
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Video, Film, Music, Palette, Globe, ArrowRight, CheckCircle, Camera, Play, Mic, Lightbulb, Monitor, ExternalLink, Eye, ChevronRight } from 'lucide-react';
+import { Video, Film, Music, Palette, Globe, ArrowRight, CheckCircle, Camera, Play, Mic, Lightbulb, Monitor, Eye, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 const FilmVideo = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
