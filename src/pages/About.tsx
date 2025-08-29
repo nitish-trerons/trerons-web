@@ -132,8 +132,8 @@ const About = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {values.map((value, index) => (
                             <div key={value.title} className="text-center group animate-fade-in-up" style={{ animationDelay: `${index * 200}ms` }}>
-                                <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
-                                    <value.icon className="h-10 w-10 text-white" />
+                                <div className="w-20 h-20 bg-gradient-to-br from-orange-600 via-orange-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg group-hover:shadow-xl group-hover:shadow-orange-500/25">
+                                    <value.icon className="h-10 w-10 text-white drop-shadow-sm" />
                                 </div>
                                 <h3 className="text-xl font-semibold mb-4 group-hover:text-primary transition-colors duration-300">{value.title}</h3>
                                 <p className="text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300">{value.description}</p>
@@ -211,11 +211,11 @@ const About = () => {
                             </div>
                             <div className="flex items-center">
                                 <Phone className="h-5 w-5 mr-2" />
-                                +1 (555) 123-4567
+                                +91-7008-550077
                             </div>
                             <div className="flex items-center">
                                 <MapPin className="h-5 w-5 mr-2" />
-                                New York, NY
+                                Bhubaneswar, Odisha
                             </div>
                         </div>
                     </div>

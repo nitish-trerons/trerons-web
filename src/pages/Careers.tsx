@@ -8,9 +8,9 @@ const Careers = () => {
         {
             title: "Senior Event Manager",
             department: "Event Services",
-            location: "New York, NY",
+            location: "Mumbai, MH",
             type: "Full-time",
-            salary: "$70,000 - $90,000",
+            salary: "₹70,000 - ₹90,000",
             experience: "5+ years",
             description: "Lead and manage high-profile corporate events, conferences, and special occasions.",
             requirements: [
@@ -24,9 +24,9 @@ const Careers = () => {
         {
             title: "Video Producer",
             department: "Film & Video",
-            location: "Los Angeles, CA",
+            location: "Bangalore, KA",
             type: "Full-time",
-            salary: "$65,000 - $85,000",
+            salary: "₹65,000 - ₹85,000",
             experience: "3+ years",
             description: "Create compelling video content for advertisements, corporate videos, and digital platforms.",
             requirements: [
@@ -42,7 +42,7 @@ const Careers = () => {
             department: "Technology",
             location: "Remote",
             type: "Full-time",
-            salary: "$80,000 - $110,000",
+            salary: "₹80,000 - ₹110,000",
             experience: "4+ years",
             description: "Build innovative web applications and digital solutions using modern technologies.",
             requirements: [
@@ -56,9 +56,9 @@ const Careers = () => {
         {
             title: "Creative Director",
             department: "Creative",
-            location: "New York, NY",
+            location: "Delhi, DL",
             type: "Full-time",
-            salary: "$90,000 - $120,000",
+            salary: "₹90,000 - ₹120,000",
             experience: "7+ years",
             description: "Lead creative vision and strategy across all service areas and client projects.",
             requirements: [
@@ -80,7 +80,7 @@ const Careers = () => {
         {
             icon: DollarSign,
             title: "Financial Security",
-            description: "Competitive salary, 401(k) matching, and performance bonuses"
+            description: "Competitive salary, PF contributions, and performance bonuses"
         },
         {
             icon: Clock,
@@ -167,8 +167,8 @@ const Careers = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {values.map((value, index) => (
                             <div key={value.title} className="text-center group animate-fade-in-up" style={{ animationDelay: `${index * 200}ms` }}>
-                                <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
-                                    <value.icon className="h-10 w-10 text-white" />
+                                <div className="w-20 h-20 bg-gradient-to-br from-blue-600 via-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-500 shadow-lg group-hover:shadow-xl group-hover:shadow-blue-500/25">
+                                    <value.icon className="h-10 w-10 text-white drop-shadow-sm" />
                                 </div>
                                 <h3 className="text-xl font-semibold mb-4 group-hover:text-primary transition-colors duration-300">{value.title}</h3>
                                 <p className="text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300">{value.description}</p>
@@ -192,8 +192,8 @@ const Careers = () => {
                         {benefits.map((benefit, index) => (
                             <Card key={benefit.title} className="group animate-fade-in-up hover:shadow-2xl transition-all duration-500 hover:scale-105" style={{ animationDelay: `${index * 200}ms` }}>
                                 <CardHeader>
-                                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500">
-                                        <benefit.icon className="h-8 w-8 text-white" />
+                                    <div className="w-16 h-16 bg-gradient-to-br from-emerald-600 via-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500 shadow-lg group-hover:shadow-xl group-hover:shadow-emerald-500/25">
+                                        <benefit.icon className="h-8 w-8 text-white drop-shadow-sm" />
                                     </div>
                                     <CardTitle className="group-hover:text-primary transition-colors duration-300">{benefit.title}</CardTitle>
                                 </CardHeader>
@@ -289,8 +289,8 @@ const Careers = () => {
                                 { step: "03", title: "Interview Process", description: "Multiple rounds of interviews with team members and leadership" }
                             ].map((step) => (
                                 <div key={step.step} className="text-center group">
-                                    <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
-                                        <span className="text-2xl font-bold text-white">{step.step}</span>
+                                    <div className="w-20 h-20 bg-gradient-to-br from-purple-600 via-purple-500 to-violet-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg group-hover:shadow-xl group-hover:shadow-purple-500/25">
+                                        <span className="text-2xl font-bold text-white drop-shadow-sm">{step.step}</span>
                                     </div>
                                     <h3 className="text-xl font-semibold mb-4 group-hover:text-primary transition-colors duration-300">{step.title}</h3>
                                     <p className="text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300">{step.description}</p>
