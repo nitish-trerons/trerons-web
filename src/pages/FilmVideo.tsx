@@ -1,7 +1,7 @@
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Video, Film, Music, Palette, Globe, ArrowRight, CheckCircle, Camera, Play } from 'lucide-react';
+import { Video, Film, Music, Palette, Globe, ArrowRight, CheckCircle, Camera, Play, Mic, Lightbulb, Monitor } from 'lucide-react';
 
 const FilmVideo = () => {
     const services = [
@@ -145,19 +145,36 @@ const FilmVideo = () => {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {equipment.map((category, index) => (
-                            <div key={category.category} className="text-center group animate-fade-in-up" style={{ animationDelay: `${index * 200}ms` }}>
-                                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
-                                    <Camera className="h-10 w-10 text-white" />
+                        {equipment.map((category, index) => {
+                            const getIcon = (categoryName: string) => {
+                                switch (categoryName) {
+                                    case "Cameras":
+                                        return <Camera className="h-10 w-10 text-white" />;
+                                    case "Audio":
+                                        return <Mic className="h-10 w-10 text-white" />;
+                                    case "Lighting":
+                                        return <Lightbulb className="h-10 w-10 text-white" />;
+                                    case "Post-Production":
+                                        return <Monitor className="h-10 w-10 text-white" />;
+                                    default:
+                                        return <Camera className="h-10 w-10 text-white" />;
+                                }
+                            };
+
+                            return (
+                                <div key={category.category} className="text-center group animate-fade-in-up" style={{ animationDelay: `${index * 200}ms` }}>
+                                    <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
+                                        {getIcon(category.category)}
+                                    </div>
+                                    <h3 className="text-xl font-semibold mb-4 group-hover:text-blue-600 transition-colors duration-300">{category.category}</h3>
+                                    <ul className="space-y-2 text-sm text-muted-foreground">
+                                        {category.items.map((item, idx) => (
+                                            <li key={idx} className="group-hover:text-foreground transition-colors duration-300">{item}</li>
+                                        ))}
+                                    </ul>
                                 </div>
-                                <h3 className="text-xl font-semibold mb-4 group-hover:text-blue-600 transition-colors duration-300">{category.category}</h3>
-                                <ul className="space-y-2 text-sm text-muted-foreground">
-                                    {category.items.map((item, idx) => (
-                                        <li key={idx} className="group-hover:text-foreground transition-colors duration-300">{item}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
                 </div>
             </section>

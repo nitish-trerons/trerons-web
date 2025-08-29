@@ -1,7 +1,7 @@
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Code, Smartphone, Globe, Share2, Database, Shield, ArrowRight, CheckCircle, Monitor } from 'lucide-react';
+import { Code, Smartphone, Globe, Share2, Database, Shield, ArrowRight, CheckCircle, Monitor, Layers, Smartphone as Mobile, Cloud, Server } from 'lucide-react';
 
 const TechServices = () => {
     const services = [
@@ -145,19 +145,36 @@ const TechServices = () => {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {technologies.map((category, index) => (
-                            <div key={category.category} className="text-center group animate-fade-in-up" style={{ animationDelay: `${index * 200}ms` }}>
-                                <div className="w-20 h-20 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
-                                    <Code className="h-10 w-10 text-white" />
+                        {technologies.map((category, index) => {
+                            const getIcon = (categoryName: string) => {
+                                switch (categoryName) {
+                                    case "Frontend":
+                                        return <Layers className="h-10 w-10 text-white" />;
+                                    case "Backend":
+                                        return <Server className="h-10 w-10 text-white" />;
+                                    case "Mobile":
+                                        return <Mobile className="h-10 w-10 text-white" />;
+                                    case "Cloud & DevOps":
+                                        return <Cloud className="h-10 w-10 text-white" />;
+                                    default:
+                                        return <Code className="h-10 w-10 text-white" />;
+                                }
+                            };
+
+                            return (
+                                <div key={category.category} className="text-center group animate-fade-in-up" style={{ animationDelay: `${index * 200}ms` }}>
+                                    <div className="w-20 h-20 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
+                                        {getIcon(category.category)}
+                                    </div>
+                                    <h3 className="text-xl font-semibold mb-4 group-hover:text-emerald-600 transition-colors duration-300">{category.category}</h3>
+                                    <ul className="space-y-2 text-sm text-muted-foreground">
+                                        {category.items.map((item, idx) => (
+                                            <li key={idx} className="group-hover:text-foreground transition-colors duration-300">{item}</li>
+                                        ))}
+                                    </ul>
                                 </div>
-                                <h3 className="text-xl font-semibold mb-4 group-hover:text-emerald-600 transition-colors duration-300">{category.category}</h3>
-                                <ul className="space-y-2 text-sm text-muted-foreground">
-                                    {category.items.map((item, idx) => (
-                                        <li key={idx} className="group-hover:text-foreground transition-colors duration-300">{item}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
                 </div>
             </section>
