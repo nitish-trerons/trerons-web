@@ -2,6 +2,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, Users, Heart, Zap, Target, Briefcase, MapPin, Clock, DollarSign, GraduationCap, Send } from 'lucide-react';
+import SEO from '@/components/SEO';
 
 const Careers = () => {
     const openPositions = [
@@ -129,6 +130,12 @@ const Careers = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 pt-20">
+            <SEO 
+                title="Careers - Join Our Team | Trerons"
+                description="Join Trerons and be part of a creative powerhouse. Explore career opportunities in event planning, film production, and technology services. Build your career with us."
+                keywords="careers, jobs, employment, event planning jobs, video production jobs, tech jobs, Bhubaneswar, Odisha"
+                url="https://trerons.com/careers"
+            />
             {/* Hero Section */}
             <section className="py-20 text-center">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

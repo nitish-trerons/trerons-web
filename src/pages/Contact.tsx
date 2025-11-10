@@ -8,6 +8,7 @@ import { emailjsConfig } from '@/lib/emailjs-config';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
+import SEO from '@/components/SEO';
 
 // Form validation schema
 const contactSchema = yup.object({
@@ -80,6 +81,12 @@ const Contact = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 pt-20">
+            <SEO 
+                title="Contact Us - Trerons"
+                description="Get in touch with Trerons for event planning, film production, and tech solutions. Contact us via email, phone, or visit our office in Bhubaneswar, Odisha."
+                keywords="contact trerons, trerons contact, event planning contact, film production contact, tech services contact, Bhubaneswar, Odisha"
+                url="https://trerons.com/contact"
+            />
             {/* Header */}
             <section className="py-12">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

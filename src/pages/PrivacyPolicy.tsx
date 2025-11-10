@@ -1,10 +1,17 @@
 
-
 import { Eye, Lock, Database, Users, Globe } from 'lucide-react';
+import SEO from '@/components/SEO';
 
 const PrivacyPolicy = () => {
     return (
         <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 pt-20">
+            <SEO 
+                title="Privacy Policy - Trerons"
+                description="Trerons Privacy Policy - Learn how we collect, use, and protect your personal information. We are committed to protecting your privacy and ensuring the security of your data."
+                keywords="privacy policy, data protection, privacy, personal information, GDPR, data security"
+                url="https://trerons.com/privacy-policy"
+                noindex={false}
+            />
             {/* Header */}
             <section className="py-12">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -2,6 +2,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Code, Smartphone, Globe, Share2, Database, Shield, ArrowRight, CheckCircle, Monitor, Layers, Smartphone as Mobile, Cloud, Server } from 'lucide-react';
+import SEO from '@/components/SEO';
 
 const TechServices = () => {
     const services = [
@@ -70,6 +71,12 @@ const TechServices = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 pt-20">
+            <SEO 
+                title="Technology Services - Trerons"
+                description="Comprehensive technology solutions including web development, mobile apps, digital products, social media management, data solutions, and cybersecurity. Building digital solutions that drive growth."
+                keywords="web development, mobile app development, software development, digital solutions, tech services, cybersecurity, data solutions, Bhubaneswar, Odisha"
+                url="https://trerons.com/tech-services"
+            />
             {/* Hero Section */}
             <section className="py-20 text-center">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

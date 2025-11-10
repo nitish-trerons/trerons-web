@@ -1,10 +1,17 @@
 
-
 import { Scale, Users, AlertTriangle } from 'lucide-react';
+import SEO from '@/components/SEO';
 
 const TermsOfService = () => {
     return (
         <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 pt-20">
+            <SEO 
+                title="Terms of Service - Trerons"
+                description="Trerons Terms of Service - Please read these terms carefully before using our services. These terms govern your use of Trerons' website and services."
+                keywords="terms of service, terms and conditions, legal, service agreement, user agreement"
+                url="https://trerons.com/terms-of-service"
+                noindex={false}
+            />
             {/* Header */}
             <section className="py-12">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

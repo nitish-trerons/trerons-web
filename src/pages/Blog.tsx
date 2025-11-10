@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardDescription, CardTitle } from '@/components/ui/card';
 import { Calendar, Clock, User, ArrowRight, Search, Filter, SortAsc } from 'lucide-react';
+import SEO from '@/components/SEO';
 import {
     blogPosts,
     featuredPost,
@@ -49,6 +50,12 @@ const Blog = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 pt-20">
+            <SEO 
+                title="Blog - Industry Insights & Trends | Trerons"
+                description="Stay ahead of the curve with expert analysis, industry trends, and innovative insights from the world of events, film, and technology."
+                keywords="blog, industry insights, event trends, film production trends, tech trends, business insights, articles"
+                url="https://trerons.com/blog"
+            />
             {/* Hero Section */}
             <section className="py-20 text-center">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

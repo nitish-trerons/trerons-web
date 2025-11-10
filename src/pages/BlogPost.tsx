@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardTitle } from '@/components/ui/card';
 import { Calendar, Clock, User, ArrowLeft, Tag, Share2 } from 'lucide-react';
+import SEO from '@/components/SEO';
 import { getPostBySlug, blogPosts } from '@/lib/blog';
 
 const BlogPost = () => {
@@ -35,6 +36,18 @@ const BlogPost = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 pt-20">
+            {post && (
+                <SEO 
+                    title={post.title}
+                    description={post.excerpt}
+                    keywords={post.tags.join(', ')}
+                    url={`https://trerons.com/blog/${post.slug}`}
+                    type="article"
+                    author={post.author}
+                    publishedTime={new Date(post.date).toISOString()}
+                    modifiedTime={new Date(post.date).toISOString()}
+                />
+            )}
             {/* Back Button */}
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 <Link to="/blog">

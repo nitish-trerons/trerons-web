@@ -2,6 +2,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, Users, Award, Target, Heart, Zap, MapPin, Phone, Mail, Globe } from 'lucide-react';
+import SEO from '@/components/SEO';
 
 const About = () => {
     const values = [
@@ -63,6 +64,12 @@ const About = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 pt-20">
+            <SEO 
+                title="About Us - Trerons"
+                description="Learn about Trerons - a creative powerhouse dedicated to transforming visions into reality through innovation, passion, and excellence. Award-winning event, film, and tech services."
+                keywords="about trerons, creative agency, event planning company, film production company, tech solutions, Bhubaneswar, Odisha, team"
+                url="https://trerons.com/about"
+            />
             {/* Hero Section */}
             <section className="py-20 text-center">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

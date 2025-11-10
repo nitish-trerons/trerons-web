@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Calendar, Users, Trophy, Heart, Star, ArrowRight, CheckCircle, Phone } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import SEO from '@/components/SEO';
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -269,6 +270,12 @@ const EventServices = () => {
 
     return (
         <div ref={pageRef} className="min-h-screen bg-gradient-to-b from-background to-muted/20 pt-20">
+            <SEO 
+                title="Event Services - Trerons"
+                description="Professional event planning and management services including corporate events, conferences, weddings, sports tournaments, and branding campaigns. Creating unforgettable experiences with meticulous planning."
+                keywords="event planning, corporate events, wedding planning, conference management, sports tournaments, event management, Bhubaneswar, Odisha"
+                url="https://trerons.com/event-services"
+            />
             {/* Hero Section */}
             <section ref={heroRef} className="py-20 text-center">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

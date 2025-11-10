@@ -3,6 +3,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Video, Film, Music, Palette, Globe, ArrowRight, CheckCircle, Camera, Play, Mic, Lightbulb, Monitor, Eye, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import SEO from '@/components/SEO';
+
 const FilmVideo = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
@@ -274,6 +276,13 @@ const FilmVideo = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 pt-20">
+            <SEO 
+                title="Film & Video Production - Trerons"
+                description="Professional film and video production services including advertisements, music videos, corporate videos, live streaming, and post-production. Cinematic excellence from concept to final cut."
+                keywords="video production, film production, music videos, corporate videos, video editing, post-production, cinematography, Bhubaneswar, Odisha"
+                url="https://trerons.com/film-video"
+                image="/TreronsLogo.svg"
+            />
             {/* Hero Section */}
             <section className="py-20 text-center">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
