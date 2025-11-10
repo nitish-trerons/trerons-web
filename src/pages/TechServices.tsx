@@ -1,7 +1,7 @@
-
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Code, Smartphone, Globe, Share2, Database, Shield, ArrowRight, CheckCircle, Monitor, Layers, Smartphone as Mobile, Cloud, Server } from 'lucide-react';
+import { Code, Smartphone, Globe, Share2, Database, Shield, ArrowRight, CheckCircle, Monitor, Layers, Smartphone as Mobile, Cloud, Server, Phone } from 'lucide-react';
 import SEO from '@/components/SEO';
 
 const TechServices = () => {
@@ -90,14 +90,18 @@ const TechServices = () => {
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-                        <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group">
-                            <span className="group-hover:translate-x-1 transition-transform duration-300">Start Your Project</span>
-                            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-                        </Button>
-                        <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-2 hover:bg-emerald-500 hover:text-white transition-all duration-500 transform hover:scale-110">
-                            <Monitor className="mr-2 h-5 w-5" />
-                            View Portfolio
-                        </Button>
+                        <Link to="/contact">
+                            <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group">
+                                <span className="group-hover:translate-x-1 transition-transform duration-300">Start Your Project</span>
+                                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                            </Button>
+                        </Link>
+                        <Link to="/film-video">
+                            <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-2 hover:bg-emerald-500 hover:text-white transition-all duration-500 transform hover:scale-110">
+                                <Monitor className="mr-2 h-5 w-5" />
+                                View Portfolio
+                            </Button>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -224,14 +228,18 @@ const TechServices = () => {
                             Let's discuss your project and create innovative technology solutions that drive your business forward
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                            <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group">
-                                <span className="group-hover:translate-x-1 transition-transform duration-300">Start Your Project</span>
-                                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-                            </Button>
-                            <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-2 hover:bg-emerald-500 hover:text-white transition-all duration-500 transform hover:scale-110">
-                                <Monitor className="mr-2 h-5 w-5" />
-                                Schedule Consultation
-                            </Button>
+                            <Link to="/contact">
+                                <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group">
+                                    <span className="group-hover:translate-x-1 transition-transform duration-300">Start Your Project</span>
+                                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                                </Button>
+                            </Link>
+                            <a href="tel:+917008550077">
+                                <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-2 hover:bg-emerald-500 hover:text-white transition-all duration-500 transform hover:scale-110">
+                                    <Phone className="mr-2 h-5 w-5" />
+                                    Schedule Consultation
+                                </Button>
+                            </a>
                         </div>
                     </div>
                 </div>

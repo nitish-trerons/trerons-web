@@ -39,8 +39,6 @@ export default defineConfig({
             'class-variance-authority',
             'embla-carousel-react'
           ],
-          // Email service
-          'email-vendor': ['@emailjs/browser'],
         },
       },
     },

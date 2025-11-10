@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Calendar, Users, Trophy, Heart, Star, ArrowRight, CheckCircle, Phone } from 'lucide-react';
@@ -270,7 +271,7 @@ const EventServices = () => {
 
     return (
         <div ref={pageRef} className="min-h-screen bg-gradient-to-b from-background to-muted/20 pt-20">
-            <SEO 
+            <SEO
                 title="Event Services - Trerons"
                 description="Professional event planning and management services including corporate events, conferences, weddings, sports tournaments, and branding campaigns. Creating unforgettable experiences with meticulous planning."
                 keywords="event planning, corporate events, wedding planning, conference management, sports tournaments, event management, Bhubaneswar, Odisha"
@@ -289,14 +290,18 @@ const EventServices = () => {
                     </div>
 
                     <div className="hero-element flex flex-col sm:flex-row gap-4 justify-center items-center">
-                        <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group">
-                            <span className="group-hover:translate-x-1 transition-transform duration-300">Start Planning</span>
-                            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-                        </Button>
-                        <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-2 hover:bg-orange-500 hover:text-white transition-all duration-500 transform hover:scale-110">
-                            <Phone className="mr-2 h-5 w-5" />
-                            Contact Us
-                        </Button>
+                        <Link to="/contact">
+                            <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group">
+                                <span className="group-hover:translate-x-1 transition-transform duration-300">Start Planning</span>
+                                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                            </Button>
+                        </Link>
+                        <a href="tel:+917008550077">
+                            <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-2 hover:bg-orange-500 hover:text-white transition-all duration-500 transform hover:scale-110">
+                                <Phone className="mr-2 h-5 w-5" />
+                                Contact Us
+                            </Button>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -373,14 +378,18 @@ const EventServices = () => {
                             Let's discuss your vision and create an event that will be remembered for years to come
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                            <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group">
-                                <span className="group-hover:translate-x-1 transition-transform duration-300">Start Your Project</span>
-                                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-                            </Button>
-                            <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-2 hover:bg-orange-500 hover:text-white transition-all duration-500 transform hover:scale-110">
-                                <Phone className="mr-2 h-5 w-5" />
-                                Schedule Consultation
-                            </Button>
+                            <Link to="/contact">
+                                <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group">
+                                    <span className="group-hover:translate-x-1 transition-transform duration-300">Start Your Project</span>
+                                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                                </Button>
+                            </Link>
+                            <a href="tel:+917008550077">
+                                <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-2 hover:bg-orange-500 hover:text-white transition-all duration-500 transform hover:scale-110">
+                                    <Phone className="mr-2 h-5 w-5" />
+                                    Schedule Consultation
+                                </Button>
+                            </a>
                         </div>
                     </div>
                 </div>

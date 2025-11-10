@@ -421,9 +421,11 @@ const Services = () => {
                                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                                 </Button>
                             </Link>
-                            <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-2 hover:bg-primary hover:text-primary-foreground transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group">
-                                <span className="group-hover:translate-x-1 transition-transform duration-300">Schedule a Call</span>
-                            </Button>
+                            <a href="tel:+917008550077">
+                                <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-2 hover:bg-primary hover:text-primary-foreground transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group">
+                                    <span className="group-hover:translate-x-1 transition-transform duration-300">Schedule a Call</span>
+                                </Button>
+                            </a>
                         </div>
                     </div>
                 </div>

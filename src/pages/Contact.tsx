@@ -3,8 +3,6 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import emailjs from '@emailjs/browser';
-import { emailjsConfig } from '@/lib/emailjs-config';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
@@ -49,31 +47,39 @@ const Contact = () => {
         setSubmitMessage('');
 
         try {
-            // EmailJS configuration - you'll need to set these up in your EmailJS account
-            const templateParams = {
+            // Prepare form data
+            const formData = {
                 from_name: `${data.firstName} ${data.lastName}`,
                 from_email: data.email,
                 phone: data.phone || 'Not provided',
                 service_interest: data.serviceInterest,
                 message: data.message,
-                to_name: 'Trerons Team'
             };
 
-            // Send email using EmailJS
-            await emailjs.send(
-                emailjsConfig.serviceId,
-                emailjsConfig.templateId,
-                templateParams,
-                emailjsConfig.publicKey
-            );
+            // Send email using Vercel serverless function
+            const response = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const result = await response.json();
+
+            if (!response.ok) {
+                throw new Error(result.error || 'Failed to send email');
+            }
 
             setSubmitStatus('success');
             setSubmitMessage('Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.');
             reset(); // Reset form after successful submission
-        } catch (error) {
+        } catch (error: any) {
             console.error('Email sending failed:', error);
             setSubmitStatus('error');
-            setSubmitMessage('Sorry, there was an error sending your message. Please try again or contact us directly.');
+            setSubmitMessage(
+                error.message || 'Sorry, there was an error sending your message. Please try again or contact us directly.'
+            );
         } finally {
             setIsSubmitting(false);
         }

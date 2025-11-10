@@ -1,63 +1,89 @@
 # Email Form Setup Guide
 
-Your contact form is now fully functional with EmailJS integration! Here's how to set it up:
+Your contact form is now fully functional with Vercel serverless functions and SMTP! Here's how to set it up:
 
 ## 🚀 Quick Setup
 
-### 1. Create EmailJS Account
-- Go to [https://www.emailjs.com/](https://www.emailjs.com/)
-- Sign up for a free account
-- Verify your email address
+### 1. Configure SMTP Credentials
 
-### 2. Set Up Email Service
-- In your EmailJS dashboard, go to "Email Services"
-- Click "Add New Service"
-- Choose your email provider (Gmail, Outlook, etc.)
-- Follow the authentication steps
-- Copy your **Service ID**
+You need to set up environment variables in your Vercel project:
 
-### 3. Create Email Template
-- Go to "Email Templates"
-- Click "Create New Template"
-- Use this template structure:
+1. Go to your Vercel project dashboard
+2. Navigate to **Settings** → **Environment Variables**
+3. Add the following environment variables:
 
-```html
-Subject: New Contact Form Submission from {{from_name}}
-
-Hello Trerons Team,
-
-You have received a new contact form submission:
-
-Name: {{from_name}}
-Email: {{from_email}}
-Phone: {{phone}}
-Service Interest: {{service_interest}}
-
-Message:
-{{message}}
-
-Best regards,
-{{from_name}}
+```
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=your-email@gmail.com
+SMTP_PASSWORD=your-app-password
+SMTP_FROM=your-email@gmail.com
+SMTP_TO=recipient@example.com
 ```
 
-- Save the template and copy your **Template ID**
+### 2. Gmail Setup (Recommended)
 
-### 4. Get Your Public Key
-- Go to "Account" → "API Keys"
-- Copy your **Public Key**
+If you're using Gmail:
 
-### 5. Update Configuration
-Open `src/lib/emailjs-config.ts` and replace the placeholder values:
+1. **Enable 2-Factor Authentication** on your Google account
+2. **Generate an App Password**:
+   - Go to [Google App Passwords](https://myaccount.google.com/apppasswords)
+   - Select "Mail" and your device
+   - Copy the generated 16-character password
+   - Use this as your `SMTP_PASSWORD` (not your regular Gmail password)
 
-```typescript
-export const emailjsConfig = {
-    serviceId: 'your_actual_service_id_here',
-    templateId: 'your_actual_template_id_here',
-    publicKey: 'your_actual_public_key_here',
-};
+**Gmail SMTP Settings:**
 ```
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=your-email@gmail.com
+SMTP_PASSWORD=your-16-char-app-password
+```
+
+### 3. Other Email Providers
+
+#### Outlook/Hotmail
+```
+SMTP_HOST=smtp-mail.outlook.com
+SMTP_PORT=587
+SMTP_USER=your-email@outlook.com
+SMTP_PASSWORD=your-password
+```
+
+#### Yahoo Mail
+```
+SMTP_HOST=smtp.mail.yahoo.com
+SMTP_PORT=587
+SMTP_USER=your-email@yahoo.com
+SMTP_PASSWORD=your-app-password
+```
+
+#### Custom SMTP Server
+Use your provider's SMTP settings:
+```
+SMTP_HOST=your-smtp-server.com
+SMTP_PORT=587 (or 465 for SSL)
+SMTP_USER=your-username
+SMTP_PASSWORD=your-password
+```
+
+### 4. Environment Variables Explained
+
+- **SMTP_HOST**: Your SMTP server address
+- **SMTP_PORT**: SMTP port (usually 587 for TLS, 465 for SSL)
+- **SMTP_USER**: Your email address or username
+- **SMTP_PASSWORD**: Your email password or app password
+- **SMTP_FROM**: Email address to send from (usually same as SMTP_USER)
+- **SMTP_TO**: Email address to receive contact form submissions
 
 ## ✨ Features
+
+### Beautiful Email Template
+- 🎨 Modern, responsive HTML email design
+- 📱 Mobile-friendly layout
+- 🎯 Professional gradient header
+- 📋 Well-organized information sections
+- 💼 Branded footer
 
 ### Form Validation
 - ✅ Required field validation
@@ -68,87 +94,126 @@ export const emailjsConfig = {
 ### User Experience
 - 🎯 Loading states during submission
 - 🎉 Success messages
-- ⚠️ Error handling
+- ⚠️ Error handling with helpful messages
 - 🔄 Form reset after successful submission
 
-### Responsive Design
-- 📱 Mobile-friendly layout
-- 💻 Desktop optimized
-- 🎨 Consistent with your brand
+### Security
+- 🔒 SMTP credentials stored securely in environment variables
+- 🛡️ Server-side validation
+- 🚫 No sensitive data exposed in frontend code
+- ✅ Input sanitization
 
 ## 🔧 Customization
 
-### Adding New Fields
+### Modifying the Email Template
+
+The email template is located in `api/send-email.ts`. You can customize:
+- Colors and gradients
+- Layout and spacing
+- Fonts and typography
+- Additional sections
+
+### Adding New Form Fields
+
 1. Update the `contactSchema` in `Contact.tsx`
 2. Add the field to the form JSX
-3. Update the `templateParams` object
-4. Modify your EmailJS template
+3. Update the `formData` object in `onSubmit`
+4. Modify the email template in `api/send-email.ts` to include the new field
 
 ### Styling Changes
+
 - All styles use Tailwind CSS classes
 - Colors match your design system
 - Hover effects and animations included
-
-### Email Template Variables
-Available variables for your EmailJS template:
-- `{{from_name}}` - Sender's full name
-- `{{from_email}}` - Sender's email
-- `{{phone}}` - Sender's phone (optional)
-- `{{service_interest}}` - Selected service
-- `{{message}}` - Message content
-- `{{to_name}}` - Recipient name
 
 ## 🚨 Troubleshooting
 
 ### Common Issues
 
-**"Service ID not found"**
-- Verify your service ID in EmailJS dashboard
-- Check if the service is active
+**"Email service not configured"**
+- Verify all environment variables are set in Vercel
+- Check that variable names match exactly (case-sensitive)
+- Ensure variables are set for the correct environment (Production, Preview, Development)
 
-**"Template ID not found"**
-- Ensure template ID is correct
-- Check if template is published
+**"Authentication failed"**
+- For Gmail: Make sure you're using an App Password, not your regular password
+- Verify your email and password are correct
+- Check if 2FA is enabled (required for Gmail App Passwords)
 
-**"Public key error"**
-- Verify your public key
-- Check if your account is verified
+**"Connection failed"**
+- Verify SMTP_HOST and SMTP_PORT are correct
+- Check if your firewall or network blocks SMTP ports
+- Try port 465 with SSL instead of 587 with TLS
 
-**Form not submitting**
+**"Form not submitting"**
 - Check browser console for errors
 - Verify all required fields are filled
-- Ensure EmailJS is properly initialized
+- Ensure the API endpoint is accessible
+- Check Vercel function logs for errors
 
-### Testing
-1. Fill out the form with test data
-2. Submit and check your email
-3. Verify all fields are received correctly
-4. Test error scenarios (invalid email, empty fields)
+### Testing Locally
 
-## 📧 Alternative Email Services
+1. Create a `.env.local` file in the root directory:
+```env
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=your-email@gmail.com
+SMTP_PASSWORD=your-app-password
+SMTP_FROM=your-email@gmail.com
+SMTP_TO=recipient@example.com
+```
 
-If you prefer not to use EmailJS, you can integrate with:
+2. Test the API endpoint:
+```bash
+curl -X POST http://localhost:3000/api/send-email \
+  -H "Content-Type: application/json" \
+  -d '{
+    "from_name": "Test User",
+    "from_email": "test@example.com",
+    "phone": "1234567890",
+    "service_interest": "events",
+    "message": "This is a test message"
+  }'
+```
 
-- **Formspree** - Simple form handling
-- **Netlify Forms** - Built-in form processing
-- **Custom Backend** - Node.js/Express endpoint
-- **AWS SES** - Enterprise email service
+### Checking Vercel Logs
 
-## 🔒 Security Notes
+1. Go to your Vercel project dashboard
+2. Navigate to **Deployments** → Select a deployment → **Functions** tab
+3. Click on `api/send-email` to view logs
+4. Check for any error messages
 
-- EmailJS public keys are safe to expose in frontend code
-- Form validation happens on both client and server side
-- Rate limiting is handled by EmailJS
-- No sensitive data is stored locally
+## 📧 Email Template Preview
+
+The email template includes:
+- **Header**: Gradient background with title
+- **Contact Information**: Name, email, phone, service interest
+- **Message Section**: Formatted message content
+- **Footer**: Company information and branding
+
+## 🔒 Security Best Practices
+
+1. **Never commit environment variables** to version control
+2. **Use App Passwords** instead of regular passwords for Gmail
+3. **Enable 2FA** on your email account
+4. **Restrict SMTP access** if possible (IP whitelisting)
+5. **Regularly rotate** your SMTP passwords
+6. **Monitor** email sending activity in Vercel logs
 
 ## 📞 Support
 
 If you need help:
-1. Check EmailJS documentation
-2. Review browser console for errors
-3. Verify all configuration values
-4. Test with a simple email template first
+1. Check Vercel function logs for detailed error messages
+2. Verify all environment variables are set correctly
+3. Test with a simple email template first
+4. Review SMTP provider documentation for specific requirements
 
 ---
 
 **Your contact form is now ready to receive messages! 🎉**
+
+**Next Steps:**
+1. Set up environment variables in Vercel
+2. Test the form submission
+3. Check your email inbox for the formatted message
+4. Customize the email template if needed

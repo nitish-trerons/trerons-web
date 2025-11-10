@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Video, Film, Music, Palette, Globe, ArrowRight, CheckCircle, Camera, Play, Mic, Lightbulb, Monitor, Eye, ChevronRight } from 'lucide-react';
@@ -296,14 +297,18 @@ const FilmVideo = () => {
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-                        <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group">
-                            <span className="group-hover:translate-x-1 transition-transform duration-300">Start Your Project</span>
-                            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-                        </Button>
-                        <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-2 hover:bg-blue-500 hover:text-white transition-all duration-500 transform hover:scale-110">
-                            <Play className="mr-2 h-5 w-5" />
-                            Watch Showreel
-                        </Button>
+                        <Link to="/contact">
+                            <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group">
+                                <span className="group-hover:translate-x-1 transition-transform duration-300">Start Your Project</span>
+                                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                            </Button>
+                        </Link>
+                        <a href="#visualloop">
+                            <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-2 hover:bg-blue-500 hover:text-white transition-all duration-500 transform hover:scale-110">
+                                <Play className="mr-2 h-5 w-5" />
+                                Watch Showreel
+                            </Button>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -370,25 +375,6 @@ const FilmVideo = () => {
                         <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
                             Our premium video production division showcasing 7+ years of creative excellence and award-winning projects
                         </p>
-                        {/* <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                            <Button
-                                size="lg"
-                                className="text-lg px-8 py-6 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group"
-                                onClick={() => window.open('https://www.visualloop.in', '_blank')}
-                            >
-                                <span className="group-hover:translate-x-1 transition-transform duration-300">Visit Visualloop.in</span>
-                                <ExternalLink className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-                            </Button>
-                            <Button
-                                variant="outline"
-                                size="lg"
-                                className="text-lg px-8 py-6 border-2 border-purple-500 hover:bg-purple-500 hover:text-white transition-all duration-500 transform hover:scale-110"
-                                onClick={() => window.open('https://www.youtube.com/@visualloopofficial', '_blank')}
-                            >
-                                <Play className="mr-2 h-5 w-5" />
-                                YouTube Channel
-                            </Button>
-                        </div> */}
                     </div>
 
                     {/* Featured Projects Grid */}
@@ -439,14 +425,6 @@ const FilmVideo = () => {
                                                 <Eye className="h-3 w-3" />
                                                 {project.views}
                                             </div>
-                                            {/* <Button
-                                                variant="ghost"
-                                                size="sm"
-                                                className="h-6 px-2 text-xs hover:bg-purple-100 hover:text-purple-700 dark:hover:bg-purple-900/30"
-                                                onClick={() => window.open('https://www.visualloop.in', '_blank')}
-                                            >
-                                                View Project
-                                            </Button> */}
                                         </div>
                                     </CardContent>
                                 </Card>
@@ -561,26 +539,6 @@ const FilmVideo = () => {
                         </div>
                     </div>
 
-                    {/* <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-2xl p-8 border border-purple-500/20">
-                        <h4 className="text-xl font-semibold mb-4">Ready to See More?</h4>
-                        <p className="text-muted-foreground mb-6">
-                            Explore our complete portfolio of {featuredProjects.length + showcaseProjects.length} projects on our dedicated Visualloop platform
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                            <Button
-                                size="lg"
-                                className="px-8 py-6 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group"
-                                onClick={() => window.open('https://www.visualloop.in', '_blank')}
-                            >
-                                <span className="group-hover:translate-x-1 transition-transform duration-300">Explore Full Portfolio</span>
-                                <ExternalLink className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-                            </Button>
-                            <Button variant="outline" size="lg" className="px-8 py-6 border-2 border-purple-500 hover:bg-purple-500 hover:text-white transition-all duration-500 transform hover:scale-110">
-                                <Calendar className="mr-2 h-5 w-5" />
-                                <span className="group-hover:translate-x-1 transition-transform duration-300">Schedule Consultation</span>
-                            </Button>
-                        </div>
-                    </div> */}
                 </div>
             </section>
 
@@ -667,14 +625,18 @@ const FilmVideo = () => {
                             Let's create compelling video content that captivates your audience and achieves your goals
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                            <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group">
-                                <span className="group-hover:translate-x-1 transition-transform duration-300">Start Your Project</span>
-                                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-                            </Button>
-                            <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-2 hover:bg-blue-500 hover:text-white transition-all duration-500 transform hover:scale-110">
-                                <Play className="mr-2 h-5 w-5" />
-                                View Portfolio
-                            </Button>
+                            <Link to="/contact">
+                                <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group">
+                                    <span className="group-hover:translate-x-1 transition-transform duration-300">Start Your Project</span>
+                                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                                </Button>
+                            </Link>
+                            <a href="#visualloop">
+                                <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-2 hover:bg-blue-500 hover:text-white transition-all duration-500 transform hover:scale-110">
+                                    <Play className="mr-2 h-5 w-5" />
+                                    View Portfolio
+                                </Button>
+                            </a>
                         </div>
                     </div>
                 </div>
