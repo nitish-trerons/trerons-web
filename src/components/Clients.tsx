@@ -121,22 +121,22 @@ const Clients = () => {
                     <div ref={clientCardsRef} className="overflow-hidden relative">
                         <div className="scroll-content flex gap-4 sm:gap-6 lg:gap-8 w-max">
                             {/* First set of logos */}
-                            {clientLogos.map((client, index) => (
+                        {clientLogos.map((client, index) => (
                                 <div key={`first-${index}`} className="group client-card flex-shrink-0">
                                     <div className="w-32 sm:w-40 aspect-square bg-gradient-to-br from-[hsl(var(--muted))] to-[hsl(var(--muted)/0.5)] rounded-xl sm:rounded-2xl flex flex-col items-center justify-center border border-[hsl(var(--border))] hover:border-[hsl(var(--primary)/0.4)] transition-all duration-300 hover:shadow-lg overflow-hidden">
-                                        <div className="flex flex-col items-center justify-center h-full p-2">
-                                            <div className="flex items-center justify-center mb-2 flex-1">
-                                                <img
-                                                    src={client.logo}
-                                                    alt={`${client.name} logo`}
+                                    <div className="flex flex-col items-center justify-center h-full p-2">
+                                        <div className="flex items-center justify-center mb-2 flex-1">
+                                            <img
+                                                src={client.logo}
+                                                alt={`${client.name} logo`}
                                                     className="w-12 h-12 sm:w-16 sm:h-16 object-contain transition-transform duration-300"
-                                                />
-                                            </div>
-                                            <div className="text-xs sm:text-sm text-[hsl(var(--muted-foreground))] font-medium leading-tight text-center">{client.name}</div>
+                                            />
                                         </div>
+                                        <div className="text-xs sm:text-sm text-[hsl(var(--muted-foreground))] font-medium leading-tight text-center">{client.name}</div>
                                     </div>
                                 </div>
-                            ))}
+                            </div>
+                        ))}
                             {/* Duplicate set for seamless loop */}
                             {clientLogos.map((client, index) => (
                                 <div key={`second-${index}`} className="group client-card flex-shrink-0">

@@ -1,7 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Users, Award, Target, Heart, Zap, MapPin, Phone, Mail, Globe } from 'lucide-react';
+import { ArrowRight, Users, Award, Target, Heart, Zap, MapPin, Phone, Mail } from 'lucide-react';
 import SEO from '@/components/SEO';
 
 const About = () => {
@@ -56,18 +56,18 @@ const About = () => {
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-                        <Link to="/contact">
+                        {/* <Link to="/contact">
                             <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group">
                                 <span className="group-hover:translate-x-1 transition-transform duration-300">Get in Touch</span>
                                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                             </Button>
-                        </Link>
-                        <Link to="/film-video">
+                        </Link> */}
+                        {/* <Link to="/film-video">
                             <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-2 hover:bg-primary hover:text-primary-foreground transition-all duration-500 transform hover:scale-110">
                                 <Globe className="mr-2 h-5 w-5" />
                                 View Portfolio
                             </Button>
-                        </Link>
+                        </Link> */}
                     </div>
                 </div>
             </section>

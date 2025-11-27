@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Code, Smartphone, Globe, Share2, Database, Shield, ArrowRight, CheckCircle, Monitor, Layers, Smartphone as Mobile, Cloud, Server, Phone } from 'lucide-react';
+import { Code, Smartphone, Globe, Share2, Database, Shield, ArrowRight, CheckCircle, Layers, Smartphone as Mobile, Cloud, Server, Phone } from 'lucide-react';
 import SEO from '@/components/SEO';
 
 const TechServices = () => {
@@ -71,7 +71,7 @@ const TechServices = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 pt-20">
-            <SEO 
+            <SEO
                 title="Technology Services - Trerons"
                 description="Comprehensive technology solutions including web development, mobile apps, digital products, social media management, data solutions, and cybersecurity. Building digital solutions that drive growth."
                 keywords="web development, mobile app development, software development, digital solutions, tech services, cybersecurity, data solutions, Bhubaneswar, Odisha"
@@ -90,24 +90,38 @@ const TechServices = () => {
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-                        <Link to="/contact">
-                            <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group">
-                                <span className="group-hover:translate-x-1 transition-transform duration-300">Start Your Project</span>
-                                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-                            </Button>
-                        </Link>
-                        <Link to="/film-video">
+                        <Button
+                            size="lg"
+                            onClick={() => {
+                                const servicesSection = document.getElementById('tech-services-grid');
+                                if (servicesSection) {
+                                    const navbarHeight = 80; // Account for navbar height (64px) + some padding
+                                    const elementPosition = servicesSection.getBoundingClientRect().top;
+                                    const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+                                    window.scrollTo({
+                                        top: offsetPosition,
+                                        behavior: 'smooth'
+                                    });
+                                }
+                            }}
+                            className="text-lg px-8 py-6 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group"
+                        >
+                            <span className="group-hover:translate-x-1 transition-transform duration-300">Start Your Project</span>
+                            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                        </Button>
+                        {/* <Link to="/film-video">
                             <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-2 hover:bg-emerald-500 hover:text-white transition-all duration-500 transform hover:scale-110">
                                 <Monitor className="mr-2 h-5 w-5" />
                                 View Portfolio
                             </Button>
-                        </Link>
+                        </Link> */}
                     </div>
                 </div>
             </section>
 
             {/* Services Grid */}
-            <section className="py-20">
+            <section id="tech-services-grid" className="py-20 scroll-mt-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16 animate-fade-in-up">
                         <h2 className="text-4xl font-bold mb-6">Our Technology Services</h2>

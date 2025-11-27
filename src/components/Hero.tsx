@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Calendar, Video, Code, ArrowRight, Play } from 'lucide-react';
+import { Calendar, Video, Code, ArrowRight } from 'lucide-react';
 import { gsap } from 'gsap';
 import { TextPlugin } from 'gsap/TextPlugin';
 
@@ -229,22 +229,36 @@ const Hero = () => {
 
                 {/* CTA Buttons with GSAP animation */}
                 <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-                    <Link to="/contact">
-                        <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:shadow-primary/25 group">
-                            <span className="group-hover:translate-x-1 transition-transform duration-300">Get Started</span>
-                            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-                        </Button>
-                    </Link>
-                    <Link to="/film-video">
+                    <Button
+                        size="lg"
+                        onClick={() => {
+                            const servicesSection = document.getElementById('services');
+                            if (servicesSection) {
+                                const navbarHeight = 80; // Account for navbar height (64px) + some padding
+                                const elementPosition = servicesSection.getBoundingClientRect().top;
+                                const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+                                window.scrollTo({
+                                    top: offsetPosition,
+                                    behavior: 'smooth'
+                                });
+                            }
+                        }}
+                        className="text-lg px-8 py-6 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:shadow-primary/25 group"
+                    >
+                        <span className="group-hover:translate-x-1 transition-transform duration-300">Get Started</span>
+                        <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                    </Button>
+                    {/* <Link to="/film-video">
                         <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-2 hover:bg-primary hover:text-primary-foreground transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group">
                             <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
                             <span className="group-hover:translate-x-1 transition-transform duration-300">View Portfolio</span>
                         </Button>
-                    </Link>
+                    </Link> */}
                 </div>
 
                 {/* Services Grid with GSAP stagger animation */}
-                <div ref={servicesRef} className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div id='services' ref={servicesRef} className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto scroll-mt-20">
                     {/* Event Services */}
                     <Link to="/event-services" className="service-card group relative p-6 rounded-2xl bg-gradient-to-br from-orange-500/10 to-red-500/10 border border-orange-500/20 hover:border-orange-500/40 transition-all duration-500 hover:shadow-2xl hover:shadow-orange-500/30 cursor-pointer">
                         <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-red-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

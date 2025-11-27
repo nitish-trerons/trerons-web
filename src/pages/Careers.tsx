@@ -271,9 +271,9 @@ const Careers = () => {
                                                 <Clock className="h-4 w-4 mr-1" />
                                                 {position.type}
                                             </span>
-                                            <span className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-500/10 text-blue-600">
+                                            <span className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-500/10 text-blue-600 font-medium">
                                                 <DollarSign className="h-4 w-4 mr-1" />
-                                                {position.salary}
+                                                Negotiable
                                             </span>
                                             <span className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-purple-500/10 text-purple-600">
                                                 <Briefcase className="h-4 w-4 mr-1" />
@@ -299,7 +299,8 @@ const Careers = () => {
                                     </div>
                                     <Button
                                         onClick={() => handleApplyNow(position.title)}
-                                        className="group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300"
+                                        disabled
+                                        className="w-full sm:w-auto group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                                     >
                                         Apply Now
                                         <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />

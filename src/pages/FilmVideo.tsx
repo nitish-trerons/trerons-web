@@ -1,5 +1,4 @@
 
-import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Video, Film, Music, Palette, Globe, ArrowRight, CheckCircle, Camera, Play, Mic, Lightbulb, Monitor } from 'lucide-react';
@@ -102,12 +101,26 @@ const FilmVideo = () => {
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-                        <Link to="/contact">
-                            <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group">
-                                <span className="group-hover:translate-x-1 transition-transform duration-300">Start Your Project</span>
-                                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-                            </Button>
-                        </Link>
+                        <Button
+                            size="lg"
+                            onClick={() => {
+                                const servicesSection = document.getElementById('film-video-services');
+                                if (servicesSection) {
+                                    const navbarHeight = 80; // Account for navbar height (64px) + some padding
+                                    const elementPosition = servicesSection.getBoundingClientRect().top;
+                                    const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+                                    window.scrollTo({
+                                        top: offsetPosition,
+                                        behavior: 'smooth'
+                                    });
+                                }
+                            }}
+                            className="text-lg px-8 py-6 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group"
+                        >
+                            <span className="group-hover:translate-x-1 transition-transform duration-300">Start Your Project</span>
+                            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                        </Button>
                         <a href="https://visualloop.in" target="_blank" rel="noopener noreferrer">
                             <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-2 hover:bg-blue-500 hover:text-white transition-all duration-500 transform hover:scale-110">
                                 <Play className="mr-2 h-5 w-5" />
@@ -119,7 +132,7 @@ const FilmVideo = () => {
             </section>
 
             {/* Services Grid */}
-            <section className="py-20">
+            <section id="film-video-services" className="py-20 scroll-mt-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16 animate-fade-in-up">
                         <h2 className="text-4xl font-bold mb-6">Our Video Services</h2>
@@ -240,12 +253,26 @@ const FilmVideo = () => {
                             Let's create compelling video content that captivates your audience and achieves your goals
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                            <Link to="/contact">
-                                <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group">
-                                    <span className="group-hover:translate-x-1 transition-transform duration-300">Start Your Project</span>
-                                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-                                </Button>
-                            </Link>
+                            <Button
+                                size="lg"
+                                onClick={() => {
+                                    const servicesSection = document.getElementById('film-video-services');
+                                    if (servicesSection) {
+                                        const navbarHeight = 80; // Account for navbar height (64px) + some padding
+                                        const elementPosition = servicesSection.getBoundingClientRect().top;
+                                        const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+                                        window.scrollTo({
+                                            top: offsetPosition,
+                                            behavior: 'smooth'
+                                        });
+                                    }
+                                }}
+                                className="text-lg px-8 py-6 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group"
+                            >
+                                <span className="group-hover:translate-x-1 transition-transform duration-300">Start Your Project</span>
+                                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                            </Button>
                             <a href="https://visualloop.in" target="_blank" rel="noopener noreferrer">
                                 <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-2 hover:bg-blue-500 hover:text-white transition-all duration-500 transform hover:scale-110">
                                     <Play className="mr-2 h-5 w-5" />
