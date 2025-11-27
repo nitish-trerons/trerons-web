@@ -1,9 +1,14 @@
 
+import React, { useEffect, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from '@/components/ui/carousel';
 import { Star, Quote } from 'lucide-react';
+import { gsap } from 'gsap';
 
 const Clients = () => {
+    const clientsSectionRef = useRef<HTMLDivElement>(null);
+    const clientCardsRef = useRef<HTMLDivElement>(null);
+    const [carouselApi, setCarouselApi] = React.useState<CarouselApi | null>(null);
     const clientLogos = [
         { name: 'LYFE', logo: 'https://www.lyfehotels.com/images/logo.svg', industry: 'Technology' },
         { name: 'SOA', logo: 'https://images.squarespace-cdn.com/content/v1/57713a8e2994cae381dd86fe/1510404984171-ODP67JSA35YQTMKZ6ATF/favicon.ico?format=100w.', industry: 'Events' },
@@ -16,28 +21,86 @@ const Clients = () => {
     ];
 
     const testimonials = [
+
         {
-            name: 'Sarah Johnson',
-            role: 'CEO',
-            company: 'TechCorp',
-            content: 'Trerons transformed our corporate event into an unforgettable experience. Their attention to detail and creativity exceeded all expectations.',
-            rating: 5
-        },
-        {
-            name: 'Michael Chen',
-            role: 'Marketing Director',
-            company: 'MediaFlow',
-            content: 'The video production quality is outstanding. Trerons delivered a campaign that perfectly captured our brand essence and drove real results.',
-            rating: 5
-        },
-        {
-            name: 'Emily Rodriguez',
+
+            name: 'Ashok Mohanty',
             role: 'Founder',
-            company: 'CreativeHub',
-            content: 'Working with Trerons on our website redesign was seamless. They understood our vision and delivered a stunning, functional site.',
+            company: 'Paschima Publications',
+            content: 'We\'ve worked with Trerons for multiple book launch events and promotional videos. Their event management skills are outstanding - they handle everything from venue setup to guest management seamlessly. The promotional content they create always resonates with our audience.',
+            rating: 5
+        },
+        {
+            name: 'Amitabh Patra',
+            role: 'Filmmaker',
+            company: 'Independent Director',
+            content: 'As a filmmaker, I\'ve collaborated with Trerons on multiple projects including my short film "ALTER". Their technical expertise, creative input, and professional equipment made all the difference. They truly understand the art of storytelling through visuals.',
+            rating: 4
+        },
+        {
+            name: 'Subham Riku',
+            role: 'Music Artist',
+            company: 'Independent Musician',
+            content: 'Trerons produced my music video "Baja Mora Bhai Re" and I couldn\'t be happier. They captured the essence of the song perfectly, and the production quality was top-notch. The team was creative, collaborative, and delivered exactly what I envisioned.',
+            rating: 4
+        },
+        {
+            name: 'Dr. Smitashree Das',
+            role: 'Content Creator',
+            company: 'YouTube Channel',
+            content: 'Trerons helped me launch my YouTube channel with a professional introduction video. Their attention to detail, editing skills, and understanding of digital content creation helped me establish a strong online presence from day one.',
+            rating: 5
+        },
+        {
+            name: 'Gayatri & Vikram',
+            role: 'Couple',
+            company: 'Wedding Clients',
+            content: 'Our engagement sangeet was beautifully captured by Trerons. They documented every special moment with such care and artistry. The highlight video they created is something we\'ll treasure forever. Highly professional and genuinely passionate about their work.',
             rating: 5
         }
+
     ];
+
+    useEffect(() => {
+        if (!clientCardsRef.current) return;
+
+        const scrollContainer = clientCardsRef.current;
+        const scrollContent = scrollContainer.querySelector('.scroll-content') as HTMLElement;
+
+        if (!scrollContent) return;
+
+        // Calculate the width of the scroll content
+        const contentWidth = scrollContent.scrollWidth / 2; // Divide by 2 because we duplicated the content
+
+        // Create infinite scroll animation
+        const animation = gsap.to(scrollContent, {
+            x: -contentWidth,
+            duration: 30, // Adjust speed (higher = slower)
+            ease: "none",
+            repeat: -1 // Infinite loop
+        });
+
+        // Cleanup
+        return () => {
+            animation.kill();
+        };
+    }, []);
+
+    // Auto-scroll testimonials carousel
+    useEffect(() => {
+        if (!carouselApi) return;
+
+        const interval = setInterval(() => {
+            if (carouselApi.canScrollNext()) {
+                carouselApi.scrollNext();
+            } else {
+                // Loop back to start
+                carouselApi.scrollTo(0);
+            }
+        }, 4000); // Change slide every 4 seconds
+
+        return () => clearInterval(interval);
+    }, [carouselApi]);
 
     return (
         <section id="clients" className="py-20 bg-gradient-to-b from-[hsl(var(--muted)/0.2)] to-[hsl(var(--background))] scroll-mt-20">
@@ -52,33 +115,53 @@ const Clients = () => {
                     </p>
                 </div>
 
-                {/* Client Logos Grid */}
-                <div className="mb-20">
+                {/* Client Logos Scrolling Marquee */}
+                <div ref={clientsSectionRef} className="mb-20">
                     <h3 className="text-xl sm:text-2xl font-semibold text-center mb-8 sm:mb-12">Our Valued Clients</h3>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4 sm:gap-6 lg:gap-8">
-                        {clientLogos.map((client, index) => (
-                            <div key={index} className="group">
-                                <div className="w-full aspect-square bg-gradient-to-br from-[hsl(var(--muted))] to-[hsl(var(--muted)/0.5)] rounded-xl sm:rounded-2xl flex flex-col items-center justify-center border border-[hsl(var(--border))] hover:border-[hsl(var(--primary)/0.4)] transition-all duration-300 hover:scale-105 sm:hover:scale-110 hover:shadow-lg overflow-hidden">
-                                    <div className="flex flex-col items-center justify-center h-full p-2">
-                                        <div className="flex items-center justify-center mb-2 flex-1">
-                                            <img
-                                                src={client.logo}
-                                                alt={`${client.name} logo`}
-                                                className="w-12 h-12 sm:w-16 sm:h-16 object-contain group-hover:scale-110 transition-transform duration-300"
-                                            />
+                    <div ref={clientCardsRef} className="overflow-hidden relative">
+                        <div className="scroll-content flex gap-4 sm:gap-6 lg:gap-8 w-max">
+                            {/* First set of logos */}
+                            {clientLogos.map((client, index) => (
+                                <div key={`first-${index}`} className="group client-card flex-shrink-0">
+                                    <div className="w-32 sm:w-40 aspect-square bg-gradient-to-br from-[hsl(var(--muted))] to-[hsl(var(--muted)/0.5)] rounded-xl sm:rounded-2xl flex flex-col items-center justify-center border border-[hsl(var(--border))] hover:border-[hsl(var(--primary)/0.4)] transition-all duration-300 hover:shadow-lg overflow-hidden">
+                                        <div className="flex flex-col items-center justify-center h-full p-2">
+                                            <div className="flex items-center justify-center mb-2 flex-1">
+                                                <img
+                                                    src={client.logo}
+                                                    alt={`${client.name} logo`}
+                                                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain transition-transform duration-300"
+                                                />
+                                            </div>
+                                            <div className="text-xs sm:text-sm text-[hsl(var(--muted-foreground))] font-medium leading-tight text-center">{client.name}</div>
                                         </div>
-                                        <div className="text-xs sm:text-sm text-[hsl(var(--muted-foreground))] font-medium leading-tight text-center">{client.name}</div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                            {/* Duplicate set for seamless loop */}
+                            {clientLogos.map((client, index) => (
+                                <div key={`second-${index}`} className="group client-card flex-shrink-0">
+                                    <div className="w-32 sm:w-40 aspect-square bg-gradient-to-br from-[hsl(var(--muted))] to-[hsl(var(--muted)/0.5)] rounded-xl sm:rounded-2xl flex flex-col items-center justify-center border border-[hsl(var(--border))] hover:border-[hsl(var(--primary)/0.4)] transition-all duration-300 hover:shadow-lg overflow-hidden">
+                                        <div className="flex flex-col items-center justify-center h-full p-2">
+                                            <div className="flex items-center justify-center mb-2 flex-1">
+                                                <img
+                                                    src={client.logo}
+                                                    alt={`${client.name} logo`}
+                                                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain transition-transform duration-300"
+                                                />
+                                            </div>
+                                            <div className="text-xs sm:text-sm text-[hsl(var(--muted-foreground))] font-medium leading-tight text-center">{client.name}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
 
                 {/* Testimonials Carousel */}
                 <div>
                     <h3 className="text-2xl font-semibold text-center mb-12">What Our Clients Say</h3>
-                    <Carousel className="w-full max-w-4xl mx-auto">
+                    <Carousel className="w-full max-w-4xl mx-auto" setApi={setCarouselApi}>
                         <CarouselContent>
                             {testimonials.map((testimonial, index) => (
                                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">

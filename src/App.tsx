@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { ThemeProvider } from '@/contexts/ThemeContext';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import Services from '@/components/Services';
+
 import Clients from '@/components/Clients';
 import Footer from '@/components/Footer';
 import SEO from '@/components/SEO';
@@ -45,14 +45,13 @@ function App() {
           <Routes>
             <Route path="/" element={
               <main>
-                <SEO 
+                <SEO
                   title="Trerons - Event, Film Production & Tech Solutions"
                   description="Transform your vision into reality with our comprehensive event services, film & video production, and tech solutions. Professional, creative, and innovative services for modern businesses."
                   keywords="event planning, film production, video production, tech solutions, corporate events, wedding planning, video services, technology services, Bhubaneswar, Odisha"
                   url="https://trerons.com"
                 />
                 <Hero />
-                <Services />
                 <Clients />
               </main>
             } />

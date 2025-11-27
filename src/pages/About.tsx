@@ -1,7 +1,6 @@
 
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, Users, Award, Target, Heart, Zap, MapPin, Phone, Mail, Globe } from 'lucide-react';
 import SEO from '@/components/SEO';
 
@@ -36,36 +35,9 @@ const About = () => {
         { number: "24/7", label: "Support Available" }
     ];
 
-    const team = [
-        {
-            name: "Alex Johnson",
-            role: "Founder & CEO",
-            description: "Visionary leader with 10+ years in creative industries",
-            image: "👨‍💼"
-        },
-        {
-            name: "Sarah Chen",
-            role: "Creative Director",
-            description: "Award-winning designer with expertise in brand development",
-            image: "👩‍🎨"
-        },
-        {
-            name: "Mike Rodriguez",
-            role: "Technical Lead",
-            description: "Full-stack developer passionate about innovative solutions",
-            image: "👨‍💻"
-        },
-        {
-            name: "Emily Watson",
-            role: "Event Manager",
-            description: "Experienced event planner with attention to detail",
-            image: "👩‍💼"
-        }
-    ];
-
     return (
         <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 pt-20">
-            <SEO 
+            <SEO
                 title="About Us - Trerons"
                 description="Learn about Trerons - a creative powerhouse dedicated to transforming visions into reality through innovation, passion, and excellence. Award-winning event, film, and tech services."
                 keywords="about trerons, creative agency, event planning company, film production company, tech solutions, Bhubaneswar, Odisha, team"
@@ -169,34 +141,7 @@ const About = () => {
                 </div>
             </section>
 
-            {/* Team Section */}
-            <section className="py-20 bg-gradient-to-r from-primary/5 to-primary/10">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-16 animate-fade-in-up">
-                        <h2 className="text-4xl font-bold mb-6">Meet Our Team</h2>
-                        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                            The talented professionals behind every successful project
-                        </p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {team.map((member, index) => (
-                            <Card key={member.name} className="text-center group animate-fade-in-up hover:shadow-2xl transition-all duration-500 hover:scale-105" style={{ animationDelay: `${index * 200}ms` }}>
-                                <CardHeader>
-                                    <div className="text-6xl mb-4">{member.image}</div>
-                                    <CardTitle className="group-hover:text-primary transition-colors duration-300">{member.name}</CardTitle>
-                                    <CardDescription className="text-primary font-semibold">{member.role}</CardDescription>
-                                </CardHeader>
-                                <CardContent>
-                                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300">
-                                        {member.description}
-                                    </p>
-                                </CardContent>
-                            </Card>
-                        ))}
-                    </div>
-                </div>
-            </section>
+            {/* Team Section - Hidden */}
 
             {/* Contact Section */}
             <section className="py-20">

@@ -1,15 +1,34 @@
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, Users, Heart, Zap, Target, Briefcase, MapPin, Clock, DollarSign, GraduationCap, Send } from 'lucide-react';
+import { ArrowRight, Users, Heart, Zap, Target, Briefcase, MapPin, Clock, DollarSign, GraduationCap } from 'lucide-react';
 import SEO from '@/components/SEO';
 
 const Careers = () => {
+    const scrollToPositions = () => {
+        const positionsSection = document.getElementById('open-positions');
+        if (positionsSection) {
+            positionsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
+
+    // const handleSendResume = () => {
+    //     const subject = encodeURIComponent('Resume Submission - General Application');
+    //     const body = encodeURIComponent(`Dear Trerons HR Team,\n\nI am interested in joining the Trerons team. Please find my resume attached.\n\nThank you for considering my application.\n\nBest regards`);
+    //     window.location.href = `mailto:careers@trerons.com?subject=${subject}&body=${body}`;
+    // };
+
+    const handleApplyNow = (positionTitle: string) => {
+        const subject = encodeURIComponent(`Application for ${positionTitle} Position`);
+        const body = encodeURIComponent(`Dear Trerons HR Team,\n\nI am writing to express my interest in the ${positionTitle} position at Trerons.\n\nPlease find my resume and cover letter attached.\n\nThank you for considering my application.\n\nBest regards`);
+        window.location.href = `mailto:careers@trerons.com?subject=${subject}&body=${body}`;
+    };
+
     const openPositions = [
         {
             title: "Senior Event Manager",
             department: "Event Services",
-            location: "Mumbai, MH",
+            location: "Bhubaneswar, OD",
             type: "Full-time",
             salary: "₹70,000 - ₹90,000",
             experience: "5+ years",
@@ -25,7 +44,7 @@ const Careers = () => {
         {
             title: "Video Producer",
             department: "Film & Video",
-            location: "Bangalore, KA",
+            location: "Bhubaneswar, OD",
             type: "Full-time",
             salary: "₹65,000 - ₹85,000",
             experience: "3+ years",
@@ -41,7 +60,7 @@ const Careers = () => {
         {
             title: "Full-Stack Developer",
             department: "Technology",
-            location: "Remote",
+            location: "Bhubaneswar, OD",
             type: "Full-time",
             salary: "₹80,000 - ₹110,000",
             experience: "4+ years",
@@ -57,7 +76,7 @@ const Careers = () => {
         {
             title: "Creative Director",
             department: "Creative",
-            location: "Delhi, DL",
+            location: "Bhubaneswar, OD",
             type: "Full-time",
             salary: "₹90,000 - ₹120,000",
             experience: "7+ years",
@@ -130,7 +149,7 @@ const Careers = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 pt-20">
-            <SEO 
+            <SEO
                 title="Careers - Join Our Team | Trerons"
                 description="Join Trerons and be part of a creative powerhouse. Explore career opportunities in event planning, film production, and technology services. Build your career with us."
                 keywords="careers, jobs, employment, event planning jobs, video production jobs, tech jobs, Bhubaneswar, Odisha"
@@ -149,14 +168,23 @@ const Careers = () => {
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-                        <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group">
+                        <Button
+                            size="lg"
+                            onClick={scrollToPositions}
+                            className="text-lg px-8 py-6 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group"
+                        >
                             <span className="group-hover:translate-x-1 transition-transform duration-300">View Open Positions</span>
                             <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                         </Button>
-                        <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-2 hover:bg-primary hover:text-primary-foreground transition-all duration-500 transform hover:scale-110">
+                        {/* <Button
+                            variant="outline"
+                            size="lg"
+                            onClick={handleSendResume}
+                            className="text-lg px-8 py-6 border-2 hover:bg-primary hover:text-primary-foreground transition-all duration-500 transform hover:scale-110"
+                        >
                             <Send className="mr-2 h-5 w-5" />
                             Send Resume
-                        </Button>
+                        </Button> */}
                     </div>
                 </div>
             </section>
@@ -216,7 +244,7 @@ const Careers = () => {
             </section>
 
             {/* Open Positions */}
-            <section className="py-20">
+            <section id="open-positions" className="py-20 scroll-mt-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16 animate-fade-in-up">
                         <h2 className="text-4xl font-bold mb-6">Open Positions</h2>
@@ -269,7 +297,10 @@ const Careers = () => {
                                             ))}
                                         </ul>
                                     </div>
-                                    <Button className="group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                                    <Button
+                                        onClick={() => handleApplyNow(position.title)}
+                                        className="group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300"
+                                    >
                                         Apply Now
                                         <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                                     </Button>
@@ -317,14 +348,23 @@ const Careers = () => {
                             Don't see a position that fits? Send us your resume and we'll keep you in mind for future opportunities
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                            <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group">
+                            <Button
+                                size="lg"
+                                onClick={scrollToPositions}
+                                className="text-lg px-8 py-6 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group"
+                            >
                                 <span className="group-hover:translate-x-1 transition-transform duration-300">View All Positions</span>
                                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                             </Button>
-                            <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-2 hover:bg-primary hover:text-primary-foreground transition-all duration-500 transform hover:scale-110">
+                            {/* <Button
+                                variant="outline"
+                                size="lg"
+                                onClick={handleSendResume}
+                                className="text-lg px-8 py-6 border-2 hover:bg-primary hover:text-primary-foreground transition-all duration-500 transform hover:scale-110"
+                            >
                                 <Send className="mr-2 h-5 w-5" />
                                 Send Resume
-                            </Button>
+                            </Button> */}
                         </div>
                         <div className="mt-8 text-muted-foreground">
                             <p>Questions about working at Trerons? Contact us at <strong>careers@trerons.com</strong></p>
