@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Calendar, Users, Trophy, Heart, Star, ArrowRight, CheckCircle, Phone } from 'lucide-react';
@@ -290,12 +289,26 @@ const EventServices = () => {
                     </div>
 
                     <div className="hero-element flex flex-col sm:flex-row gap-4 justify-center items-center">
-                        <Link to="/contact">
-                            <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group">
-                                <span className="group-hover:translate-x-1 transition-transform duration-300">Start Planning</span>
-                                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-                            </Button>
-                        </Link>
+                        <Button
+                            size="lg"
+                            onClick={() => {
+                                const servicesSection = document.getElementById('event-services-grid');
+                                if (servicesSection) {
+                                    const navbarHeight = 80; // Account for navbar height (64px) + some padding
+                                    const elementPosition = servicesSection.getBoundingClientRect().top;
+                                    const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+                                    window.scrollTo({
+                                        top: offsetPosition,
+                                        behavior: 'smooth'
+                                    });
+                                }
+                            }}
+                            className="text-lg px-8 py-6 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group"
+                        >
+                            <span className="group-hover:translate-x-1 transition-transform duration-300">Start Planning</span>
+                            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                        </Button>
                         <a href="tel:+917008550077">
                             <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-2 hover:bg-orange-500 hover:text-white transition-all duration-500 transform hover:scale-110">
                                 <Phone className="mr-2 h-5 w-5" />
@@ -307,7 +320,7 @@ const EventServices = () => {
             </section>
 
             {/* Services Grid */}
-            <section ref={servicesRef} className="py-20">
+            <section id="event-services-grid" ref={servicesRef} className="py-20 scroll-mt-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h2 className="section-heading text-4xl font-bold mb-6">Our Event Services</h2>
@@ -378,12 +391,26 @@ const EventServices = () => {
                             Let's discuss your vision and create an event that will be remembered for years to come
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                            <Link to="/contact">
-                                <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group">
-                                    <span className="group-hover:translate-x-1 transition-transform duration-300">Start Your Project</span>
-                                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-                                </Button>
-                            </Link>
+                            <Button
+                                size="lg"
+                                onClick={() => {
+                                    const servicesSection = document.getElementById('event-services-grid');
+                                    if (servicesSection) {
+                                        const navbarHeight = 80; // Account for navbar height (64px) + some padding
+                                        const elementPosition = servicesSection.getBoundingClientRect().top;
+                                        const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+                                        window.scrollTo({
+                                            top: offsetPosition,
+                                            behavior: 'smooth'
+                                        });
+                                    }
+                                }}
+                                className="text-lg px-8 py-6 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group"
+                            >
+                                <span className="group-hover:translate-x-1 transition-transform duration-300">Start Your Project</span>
+                                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                            </Button>
                             <a href="tel:+917008550077">
                                 <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-2 hover:bg-orange-500 hover:text-white transition-all duration-500 transform hover:scale-110">
                                     <Phone className="mr-2 h-5 w-5" />
