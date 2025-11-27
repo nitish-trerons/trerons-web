@@ -5,7 +5,7 @@ import SEO from '@/components/SEO';
 const PrivacyPolicy = () => {
     return (
         <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 pt-20">
-            <SEO 
+            <SEO
                 title="Privacy Policy - Trerons"
                 description="Trerons Privacy Policy - Learn how we collect, use, and protect your personal information. We are committed to protecting your privacy and ensuring the security of your data."
                 keywords="privacy policy, data protection, privacy, personal information, GDPR, data security"
@@ -203,8 +203,8 @@ const PrivacyPolicy = () => {
                                     <div className="bg-muted/20 rounded-lg p-6">
                                         <div className="space-y-2">
                                             <p className="text-foreground"><strong>Email:</strong> privacy@trerons.com</p>
-                                            <p className="text-foreground"><strong>Phone:</strong> +1 (555) 123-4567</p>
-                                            <p className="text-foreground"><strong>Address:</strong> 123 Business Street, New York, NY 10001</p>
+                                            <p className="text-foreground"><strong>Phone:</strong> +91-7008-550077</p>
+                                            <p className="text-foreground"><strong>Address:</strong> Plot No.- 1882, Unit- 8, Nayapalli, Bhubaneswar, Odisha 751012, India</p>
                                         </div>
                                     </div>
                                 </div>

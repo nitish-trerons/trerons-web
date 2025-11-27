@@ -5,7 +5,7 @@ import SEO from '@/components/SEO';
 const TermsOfService = () => {
     return (
         <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 pt-20">
-            <SEO 
+            <SEO
                 title="Terms of Service - Trerons"
                 description="Trerons Terms of Service - Please read these terms carefully before using our services. These terms govern your use of Trerons' website and services."
                 keywords="terms of service, terms and conditions, legal, service agreement, user agreement"
@@ -189,10 +189,10 @@ const TermsOfService = () => {
                                 <div>
                                     <h2 className="text-2xl font-bold mb-4">Governing Law and Dispute Resolution</h2>
                                     <p className="text-muted-foreground leading-relaxed mb-4">
-                                        These Terms shall be governed by and construed in accordance with the laws of the State of New York, without regard to its conflict of law provisions.
+                                        These Terms shall be governed by and construed in accordance with the laws of India, without regard to its conflict of law provisions.
                                     </p>
                                     <p className="text-muted-foreground leading-relaxed">
-                                        Any disputes arising from these Terms or our services shall be resolved through binding arbitration in New York, NY, in accordance with the rules of the American Arbitration Association.
+                                        Any disputes arising from these Terms or our services shall be resolved through binding arbitration in Bhubaneswar, Odisha, India, in accordance with the Arbitration and Conciliation Act, 2015.
                                     </p>
                                 </div>
 
@@ -221,8 +221,8 @@ const TermsOfService = () => {
                                     <div className="bg-muted/20 rounded-lg p-6">
                                         <div className="space-y-2">
                                             <p className="text-foreground"><strong>Email:</strong> legal@trerons.com</p>
-                                            <p className="text-foreground"><strong>Phone:</strong> +1 (555) 123-4567</p>
-                                            <p className="text-foreground"><strong>Address:</strong> 123 Business Street, New York, NY 10001</p>
+                                            <p className="text-foreground"><strong>Phone:</strong> +91-7008-550077</p>
+                                            <p className="text-foreground"><strong>Address:</strong> Plot No.- 1882, Unit- 8, Nayapalli, Bhubaneswar, Odisha 751012, India</p>
                                         </div>
                                     </div>
                                 </div>
