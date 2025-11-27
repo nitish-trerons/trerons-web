@@ -111,7 +111,7 @@ const FilmVideo = () => {
                         <a href="https://visualloop.in" target="_blank" rel="noopener noreferrer">
                             <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-2 hover:bg-blue-500 hover:text-white transition-all duration-500 transform hover:scale-110">
                                 <Play className="mr-2 h-5 w-5" />
-                                Watch Showreel
+                                Visual Loop
                             </Button>
                         </a>
                     </div>
